@@ -1,0 +1,22 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:staggered="http://schemas.android.com/apk/res-auto"
+    tools:context="cn.panorama.slook.ui.fragment.UnusualFragment">
+
+    <cn.panorama.slook.utils.stagger.StaggeredGridView
+        android:id="@+id/stgv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        staggered:numColumns="2"
+        staggered:drawSelectorOnTop="true"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar0"
+        style="?android:progressBarStyleLargeInverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+</FrameLayout>

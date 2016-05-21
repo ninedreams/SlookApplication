@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="PanoramaGL_0.2-beta">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/PanoramaGL_0.2-beta.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

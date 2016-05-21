@@ -1,0 +1,78 @@
+{
+    "urlBase": "res://raw",
+    "type": "cubic",
+    "keep": "all",
+    
+    "reset":                                    //Reset section <Optional>
+    {
+        "enabled": true,                        //Enable reset feature [true, false] <Optional>
+        "numberOfTouches": 3,                   //Number of touches to reset <Optional>
+        "shake":                                //Shake reset section <Optional>
+        {
+                "enabled": true,                //Enable shake reset [true, false] <Optional>
+                "threshold": 1300               //Shake threshold（阈值） <Optional>
+        }
+    },
+    "scrolling":                                //Scrolling section <Optional>
+    {
+        "enabled": true,                        //Enable scrolling feature [true, false] <Optional>
+        "minDistanceToEnableScrolling": 30      //Minimum distance to enable scrolling in pixels <Optional>
+    },
+    "images":
+    {
+        "front": "ustb1_f",
+        "back": "ustb1_b",
+        "left": "ustb1_l",
+        "right": "ustb1_r",
+        "up": "ustb1_u",
+        "down": "ustb1_d"
+    },
+    "camera":
+    {
+    	"keep": "none",                         //Keeps the current camera settings [none, atvMin, atvMax, atvRange, athMin, athMax, athRange, reverseRotation, rotationSensitivity, vLookAt, hLookAt, rotation, zoomLevels, fovMin, fovMax, fovRange, fovSensitivity, fov, allRotation, allZoom, all] <Optional>
+                                                //By default the value is none and you can use the options like a mask e.g. all|~atvRange that meaning keep all except the atvRange options
+        "atvMin": -90.0,                        //Minimum vertical rotation in degrees [-90.0, 90.0] (down) <Optional>
+        "atvMax": 90.0,                         //Maximum vertical rotation in degrees [-90.0, 90.0] (up) <Optional>
+        "athMin": -180.0,                       //Minimum horizontal rotation in degrees [-180.0, 180.0] (left) <Optional>
+        "athMax": 180.0,                        //Maximum horizontal rotation in degrees [-180.0, 180.0] (right) <Optional>
+        "reverseRotation": true,                //Reverse rotation [true, false] <Optional>
+        "rotationSensitivity": 30.0,            //Rotation sensitivity in pixels [1.0, 180.0] <Optional>
+        "vLookAt": 0.0,                         //Initial vertical rotation in degrees [-90.0, 90.0] <Optional>
+        "hLookAt": 20.0,                         //Initial horizontal rotation in degrees [-180.0, 180.0] <Optional>
+        "zoomLevels": 2,                        //Zoom levels for zoom in and zoom out [1, ...] <Optional>
+        "fovMin": 30.0,                         //Minimum field of view in degrees [0.01, 179.0] <Optional>
+        "fovMax": 90.0,                         //Maximum field of view in degrees [0.01, 179.0] <Optional>
+        "fovSensitivity": 30.0,                 //Field of view sensitivity in pixels [1.0, 100.0] <Optional>
+        "fov": 90.0,                            //Initial field of view in degrees [0.01, 179.0] <Optional> Note: see notes at the end of literal
+        "fovFactor": 1.0,                       //Field of view factor [0.0, 1.0] <Optional> Note: see notes at the end of literal
+        "zoomFactor": 0.0,                      //Zoom factor [0.0, 1.0] <Optional> Note: see notes at the end of literal
+        "zoomLevel": 0         
+    },
+    "sensorialRotation": true,                   //重力感应
+    "inertia":                                   //惯性，迟钝，
+	{
+		"enabled": false,
+		"interval": 3.0
+	},
+	"accelerometer":                              //加速计
+	{
+		"enabled": true,
+		"interval": 0.033,
+		"sensitivity": 45.0,
+		"leftRightEnabled": true,
+		"upDownEnabled": true
+	},
+    "hotspots":
+	[
+		{
+			"id": 1,
+			"atv": 0.0,
+			"ath": 0.0,
+			"width": 0.05,
+			"height": 0.05,
+			"image": "hotspot",
+			"onClick": "lookAt(0.0, 0.0, true); load('res://raw/json_cubic_ustb1', true, BLEND(2.0, 1.0), 0.0, 0.0)"
+		}
+
+	]
+}
