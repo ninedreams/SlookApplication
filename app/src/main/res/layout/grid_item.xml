@@ -1,35 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<com.daimajia.swipe.SwipeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/swipe"
-    android:layout_width="match_parent" android:layout_height="match_parent">
-    <LinearLayout
-        android:tag="Bottom2"
-        android:background="#333"
-        android:layout_width="40dp"
-        android:gravity="center"
-        android:layout_height="120dp">
-        <ImageView
-            android:id="@+id/trash"
-            android:src="@drawable/trash"
-            android:layout_width="22dp"
-            android:layout_height="22dp" />
-    </LinearLayout>
+    android:padding="10dp"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:padding="10dp"
-        android:background="#ffffff"
+    <cn.panorama.slook.utils.stagger.STGVImageView
+        android:id="@+id/image_gridview"
+        android:scaleType="center"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/position"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:tag="Hover"
-            android:text="If winter comes , can spring be far behind ? \n"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
-</com.daimajia.swipe.SwipeLayout>
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/text_gridview"
+        android:textSize="12sp"
+        android:layout_marginTop="7.0dp"
+        android:textColor="@color/md_blue_400"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+</LinearLayout>
+

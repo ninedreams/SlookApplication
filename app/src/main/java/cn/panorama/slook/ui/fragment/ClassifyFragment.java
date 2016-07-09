@@ -1,5 +1,8 @@
 package cn.panorama.slook.ui.fragment;
 
+import android.annotation.TargetApi;
+import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -10,16 +13,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import java.lang.ref.WeakReference;
 
+import cn.panorama.slook.adapter.GridViewAdapter;
 import cn.panorama.slook.ui.R;
+import cn.panorama.slook.utils.stagger.StaggeredGridView;
 
 /**
  * Created by xingyaoma on 16-4-29.
+ * 第一个分类特色里面的二级分类
  */
 public class ClassifyFragment extends Fragment {
+
+    private StaggeredGridView gridView;
+    private GridViewAdapter gridViewAdapter;
+
     public static final String TAG = ClassifyFragment.class.getSimpleName();
 
     private static final int MOCK_LOAD_DATA_DELAYED_TIME = 2000;
@@ -28,13 +37,10 @@ public class ClassifyFragment extends Fragment {
 
     private WeakRunnable mRunnable = new WeakRunnable(this);
 
-    private String mText;
-
-    private TextView tvText;
-
     private ProgressBar progressBar;
 
     private View view;
+
 
     public static final String EXTRA_TEXT = "extra_text";
 
@@ -64,12 +70,31 @@ public class ClassifyFragment extends Fragment {
     }
 
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // TODO Auto-generated method stub
 
         this.view=inflater.inflate(R.layout.fragment_classify, container, false);
+
+        gridView = (StaggeredGridView) view.findViewById(R.id.gridview);
+
+        int margin = getResources().getDimensionPixelSize(R.dimen.stgv_margin);
+
+        gridView.setItemMargin(margin);
+        gridView.setPadding(margin, 0, margin, 0);
+
+        gridViewAdapter = new GridViewAdapter(getActivity().getApplicationContext(), getActivity().getApplication());
+        gridView.setAdapter(gridViewAdapter);
+        gridViewAdapter.notifyDataSetChanged();
+
+        gridView.setOnLoadmoreListener(new StaggeredGridView.OnLoadmoreListener() {
+            @Override
+            public void onLoadmore() {
+
+            }
+        });
 
         return view;
     }
@@ -78,6 +103,8 @@ public class ClassifyFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         progressBar = (ProgressBar) view.findViewById(R.id.progressBar2);
+
+
     }
 
     @Override
@@ -127,5 +154,30 @@ public class ClassifyFragment extends Fragment {
                 cFragment.bindData();
             }
         }
+    }
+
+    public class LoadMoreTask extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            gridViewAdapter.getMoreItem();
+            gridViewAdapter.notifyDataSetChanged();
+            super.onPostExecute(result);
+        }
+
     }
 }

@@ -8,14 +8,24 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.widget.AbsListView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 
+import com.github.clans.fab.FloatingActionButton;
+
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 import cn.panorama.slook.ui.R;
 
 /**
  * Created by xingyaoma on 16-5-1.
+ * 一级分类VR下的二级分类，第一个VRphoto
  */
 public class PhotoVRFragment extends Fragment {
 
@@ -30,6 +40,10 @@ public class PhotoVRFragment extends Fragment {
     private ProgressBar progressBar;
 
     private static final String KEY_TITLE = "title";
+
+    private ListView mListView;
+    private FloatingActionButton mFab;
+    private int mPreviousVisibleItem;
 
     public PhotoVRFragment(){
 
@@ -49,17 +63,24 @@ public class PhotoVRFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_photovr, container, false);
+        View view =  inflater.inflate(R.layout.fragment_photovr, container, false);
+
+
+
+        return view;
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         progressBar = (ProgressBar) view.findViewById(R.id.progressBar4);
+        mListView = (ListView) view.findViewById(R.id.listvie_vrphoto);
+        mFab = (FloatingActionButton) view.findViewById(R.id.fab_vrphoto);
 
     }
 
@@ -67,6 +88,41 @@ public class PhotoVRFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         loadData();
+
+        Locale[] availableLocales = Locale.getAvailableLocales();
+        List<String> locales = new ArrayList<>();
+        for (Locale locale : availableLocales) {
+            locales.add(locale.getDisplayName());
+        }
+
+        mListView.setAdapter(new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1,
+                android.R.id.text1, locales));
+
+        mFab.hide(false);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mFab.show(true);
+                mFab.setShowAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.show_from_bottom));
+                mFab.setHideAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.hide_to_bottom));
+            }
+        }, 300);
+
+        mListView.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+                if (firstVisibleItem > mPreviousVisibleItem) {
+                    mFab.hide(true);
+                } else if (firstVisibleItem < mPreviousVisibleItem) {
+                    mFab.show(true);
+                }
+                mPreviousVisibleItem = firstVisibleItem;
+            }
+        });
     }
 
     @Override
@@ -109,4 +165,5 @@ public class PhotoVRFragment extends Fragment {
             }
         }
     }
+
 }

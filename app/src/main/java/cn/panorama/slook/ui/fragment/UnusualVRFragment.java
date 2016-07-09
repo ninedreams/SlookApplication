@@ -16,6 +16,7 @@ import cn.panorama.slook.ui.R;
 
 /**
  * Created by xingyaoma on 16-5-1.
+ * 二级分类特色VR
  */
 public class UnusualVRFragment extends Fragment {
 

@@ -81,5 +81,11 @@ dependencies {
     //https://github.com/Aspsine/FragmentNavigator
     compile 'com.github.Aspsine:FragmentNavigator:1.0.2'
 
+    compile "com.daimajia.swipelayout:library:1.2.0@aar"
 
+    compile 'com.etsy.android.grid:library:1.0.5'
+
+    compile 'com.malinskiy:superrecyclerview:1.1.4'
+
+    compile 'com.github.clans:fab:1.6.4'
 }

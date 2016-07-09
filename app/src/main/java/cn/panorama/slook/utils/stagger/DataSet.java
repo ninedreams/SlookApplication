@@ -67,4 +67,28 @@ public class DataSet {
             630,
             400
     };
+
+    public String text[] = {
+        "slook1",
+            "slook2",
+            "slook3",
+            "slook4",
+            "slook5",
+            "slook6",
+            "slook7",
+            "slook8",
+            "slook9",
+            "slook10",
+            "slook11",
+            "slook12",
+            "slook13",
+            "slook14",
+            "slook15",
+            "slook16",
+            "slook17",
+            "slook18",
+            "slook19",
+            "slook20"
+
+    };
 }

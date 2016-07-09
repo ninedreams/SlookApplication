@@ -9,7 +9,7 @@ import cn.panorama.slook.ui.fragment.UnusualVRFragment;
 import cn.panorama.slook.ui.fragment.VideoVRFragment;
 
 /**
- * Created by aspsine on 16/4/3.
+ * Created by xingyaoma on 16/4/3.
  */
 public class ChildFragmentAdapter implements FragmentNavigatorAdapter {
 

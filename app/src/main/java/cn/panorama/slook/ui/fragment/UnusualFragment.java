@@ -1,6 +1,7 @@
 package cn.panorama.slook.ui.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,23 +12,24 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ProgressBar;
 
 import java.lang.ref.WeakReference;
 
+import cn.panorama.slook.ui.PanoramaActivity;
 import cn.panorama.slook.ui.R;
 import cn.panorama.slook.utils.stagger.STGVAdapter;
 import cn.panorama.slook.utils.stagger.StaggeredGridView;
 
 /**
  * Created by xingyaoma on 16-4-29.
+ * 二级分类特色
  */
 public class UnusualFragment extends Fragment  {
 
     //stagger
-    StaggeredGridView stgv;
-    STGVAdapter mAdapter;
+    private StaggeredGridView stgv;
+    private STGVAdapter mAdapter;
 
     public static final String TAG = UnusualFragment.class.getSimpleName();
 
@@ -81,7 +83,7 @@ public class UnusualFragment extends Fragment  {
         stgv.setItemMargin(margin);
         stgv.setPadding(margin, 0, margin, 0);
 
-        stgv.setHeaderView(new Button(getContext()));
+        //stgv.setHeaderView(new Button(getContext()));
         View footerView;
         LayoutInflater inflater_stagger = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         footerView = inflater_stagger.inflate(R.layout.layout_loading_footer, null);
@@ -97,6 +99,73 @@ public class UnusualFragment extends Fragment  {
                 new LoadMoreTask().execute();
             }
         });
+
+        stgv.setOnItemClickListener(new StaggeredGridView.OnItemClickListener() {
+            @Override
+            public void onItemClick(StaggeredGridView parent, View view, int position, long id) {
+                switch (position){
+                    case 0:
+                        startActivity(new Intent(getActivity(), PanoramaActivity.class));
+                        break;
+
+                    case 1:
+                        startActivity(new Intent(getActivity(), PanoramaActivity.class));
+                        break;
+
+                    case 2:
+                        startActivity(new Intent(getActivity(), PanoramaActivity.class));
+                        break;
+
+                    case 3:
+                        startActivity(new Intent(getActivity(), PanoramaActivity.class));
+                        break;
+
+                    case 4:
+
+                        break;
+                    case 5:
+
+                        break;
+                    case 6:
+
+                        break;
+
+                    case 7:
+
+                        break;
+
+                    case 8:
+
+                        break;
+
+                    case 9:
+
+                        break;
+
+                    case 10:
+
+                        break;
+
+                    case 11:
+
+                        break;
+
+                    case 12:
+
+                        break;
+
+                    case 13:
+
+                        break;
+
+                    default:break;
+
+                }
+
+
+            }
+        });
+
 
         return view;
     }

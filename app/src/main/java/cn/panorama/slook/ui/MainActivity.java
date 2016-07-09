@@ -1,9 +1,7 @@
 package cn.panorama.slook.ui;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -11,7 +9,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CompoundButton;
-import android.widget.Toast;
 
 import com.aspsine.fragmentnavigator.FragmentNavigator;
 import com.mikepenz.fastadapter.utils.RecyclerViewCacheUtil;
@@ -23,7 +20,6 @@ import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
-import com.mikepenz.materialdrawer.holder.BadgeStyle;
 import com.mikepenz.materialdrawer.holder.StringHolder;
 import com.mikepenz.materialdrawer.interfaces.OnCheckedChangeListener;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
@@ -32,8 +28,6 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileSettingDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
-import com.mikepenz.materialdrawer.model.SecondarySwitchDrawerItem;
-import com.mikepenz.materialdrawer.model.SecondaryToggleDrawerItem;
 import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 import com.mikepenz.materialdrawer.model.SwitchDrawerItem;
 import com.mikepenz.materialdrawer.model.ToggleDrawerItem;
@@ -131,27 +125,27 @@ public class MainActivity extends AppCompatActivity implements BottomNavigatorVi
                 .withItemAnimator(new AlphaCrossFadeAnimator())
                 .withAccountHeader(headerResult) //set the AccountHeader we created earlier for the header
                 .addDrawerItems(
-                        new PrimaryDrawerItem().withName(R.string.remark).withIcon(GoogleMaterial.Icon.gmd_ac_unit).withIdentifier(1).withSelectable(false),
-                        new PrimaryDrawerItem().withName(R.string.share).withIcon(FontAwesome.Icon.faw_home).withIdentifier(2).withSelectable(false),
-                        new PrimaryDrawerItem().withName(R.string.personal_data).withIcon(FontAwesome.Icon.faw_gamepad).withIdentifier(3).withSelectable(false),
-                        new PrimaryDrawerItem().withName(R.string.message).withDescription(R.string.drawer_item_non_translucent_status_drawer_desc).withIcon(FontAwesome.Icon.faw_eye)
-                                .withIdentifier(4).withSelectable(false).withBadgeStyle(new BadgeStyle().withTextColor(Color.WHITE).withColorRes(R.color.md_red_700)),
-                        new PrimaryDrawerItem().withName(R.string.mine).withDescription(R.string.drawer_item_advanced_drawer_desc).withIcon(GoogleMaterial.Icon.gmd_adb).withIdentifier(5).withSelectable(false),
-                        new SectionDrawerItem().withName(R.string.version),
-                        new ExpandableDrawerItem().withName(R.string.navigation_light_module).withIcon(GoogleMaterial.Icon.gmd_battery_std).withIdentifier(19).withSelectable(false).withSubItems(
-                                new SecondaryDrawerItem().withName(R.string.navigation_light_sun_module).withLevel(2).withIcon(GoogleMaterial.Icon.gmd_airline_seat_recline_normal).withIdentifier(2000),
-                                new SecondaryDrawerItem().withName(R.string.navigation_light_night_module).withLevel(2).withIcon(GoogleMaterial.Icon.gmd_airplay).withIdentifier(2001)
+                        new PrimaryDrawerItem().withName(R.string.buytickets).withIcon(GoogleMaterial.Icon.gmd_ac_unit).withIdentifier(1).withSelectable(false),
+                        new PrimaryDrawerItem().withName(R.string.frineds).withIcon(FontAwesome.Icon.faw_home).withIdentifier(2).withSelectable(false),
+                        new PrimaryDrawerItem().withName(R.string.share).withIcon(FontAwesome.Icon.faw_gamepad).withIdentifier(3).withSelectable(false),
+                        new PrimaryDrawerItem().withName(R.string.collect).withIcon(FontAwesome.Icon.faw_gamepad).withIdentifier(4).withSelectable(false),
+                        new SectionDrawerItem().withName(R.string.navigation_settings),
+                        new ExpandableDrawerItem().withName(R.string.language).withIcon(GoogleMaterial.Icon.gmd_battery_std).withIdentifier(6).withSelectable(false).withSubItems(
+                                new SecondaryDrawerItem().withName(R.string.chinese).withSelectable(true).withLevel(2).withIcon(GoogleMaterial.Icon.gmd_airline_seat_recline_normal).withIdentifier(2000),
+                                new SecondaryDrawerItem().withName(R.string.english).withLevel(2).withIcon(GoogleMaterial.Icon.gmd_airplay).withIdentifier(2001),
+                                new SecondaryDrawerItem().withName(R.string.german).withLevel(2).withIcon(GoogleMaterial.Icon.gmd_airplay).withIdentifier(2002),
+                                new SecondaryDrawerItem().withName(R.string.french).withLevel(2).withIcon(GoogleMaterial.Icon.gmd_airplay).withIdentifier(2003),
+                                new SecondaryDrawerItem().withName(R.string.japanese).withLevel(2).withIcon(GoogleMaterial.Icon.gmd_airplay).withIdentifier(2004),
+                                new SecondaryDrawerItem().withName(R.string.korean).withLevel(2).withIcon(GoogleMaterial.Icon.gmd_airplay).withIdentifier(2005)
                         ),
-                        new SecondaryDrawerItem().withName(R.string.drawer_item_open_source).withIcon(FontAwesome.Icon.faw_github).withIdentifier(20).withSelectable(false),
-                        new SecondaryDrawerItem().withName(R.string.drawer_item_contact).withIcon(GoogleMaterial.Icon.gmd_format_color_fill).withIdentifier(21).withTag("Bullhorn"),
+                        //new SecondaryDrawerItem().withName(R.string.drawer_item_open_source).withIcon(FontAwesome.Icon.faw_github).withIdentifier(7).withSelectable(false),
+                        //new SecondaryDrawerItem().withName(R.string.drawer_item_contact).withIcon(GoogleMaterial.Icon.gmd_format_color_fill).withIdentifier(8).withTag("Bullhorn"),
                         new DividerDrawerItem(),
                         new SwitchDrawerItem().withName(R.string.navigation_wifi_download).withIcon(Octicons.Icon.oct_tools).withChecked(true).withOnCheckedChangeListener(onCheckedChangeListener),
-                        new SwitchDrawerItem().withName("Switch2").withIcon(Octicons.Icon.oct_tools).withChecked(true).withOnCheckedChangeListener(onCheckedChangeListener).withSelectable(false),
-                        new ToggleDrawerItem().withName("Toggle").withIcon(Octicons.Icon.oct_tools).withChecked(true).withOnCheckedChangeListener(onCheckedChangeListener),
-                        new DividerDrawerItem(),
-                        new SecondarySwitchDrawerItem().withName("Secondary switch").withIcon(Octicons.Icon.oct_tools).withChecked(true).withOnCheckedChangeListener(onCheckedChangeListener),
-                        new SecondarySwitchDrawerItem().withName("Secondary Switch2").withIcon(Octicons.Icon.oct_tools).withChecked(true).withOnCheckedChangeListener(onCheckedChangeListener).withSelectable(false),
-                        new SecondaryToggleDrawerItem().withName("Secondary toggle").withIcon(Octicons.Icon.oct_tools).withChecked(true).withOnCheckedChangeListener(onCheckedChangeListener)
+                        new ToggleDrawerItem().withName(R.string.navigation_light_night_module).withIcon(Octicons.Icon.oct_tools).withChecked(false).withOnCheckedChangeListener(onCheckedChangeListener),
+                        new PrimaryDrawerItem().withName(R.string.feedback).withIcon(FontAwesome.Icon.faw_gamepad).withIdentifier(5).withSelectable(false)
+                        //new SecondarySwitchDrawerItem().withName("Secondary switch").withIcon(Octicons.Icon.oct_tools).withChecked(true).withOnCheckedChangeListener(onCheckedChangeListener),
+                        //new SecondaryToggleDrawerItem().withName("Secondary toggle").withIcon(Octicons.Icon.oct_tools).withChecked(true).withOnCheckedChangeListener(onCheckedChangeListener)
                 ) // add the items we want to use with our Drawer
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
@@ -185,9 +179,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigatorVi
         }
 
         result.updateBadge(4, new StringHolder(10 + ""));
-
-        //浮动按钮
-        execFloatingActionButton();
 
 
     }
@@ -257,26 +248,26 @@ public class MainActivity extends AppCompatActivity implements BottomNavigatorVi
         if (drawerItem != null) {
             Intent intent = null;
             if (drawerItem.getIdentifier() == 1) {
-                intent = new Intent(MainActivity.this, PanoramaActivity.class);
+                intent = new Intent(MainActivity.this, BuyTicketsActivity.class);
             } else if (drawerItem.getIdentifier() == 2) {
-                intent = new Intent(MainActivity.this, PanoramaActivity.class);
+                intent = new Intent(MainActivity.this, FriendActivity.class);
             } else if (drawerItem.getIdentifier() == 3) {
-                intent = new Intent(MainActivity.this, PanoramaActivity.class);
+                intent = new Intent(MainActivity.this, SharedActivity.class);
             } else if (drawerItem.getIdentifier() == 4) {
-                intent = new Intent(MainActivity.this, PanoramaActivity.class);
+                intent = new Intent(MainActivity.this, CollectActivity.class);
             } else if (drawerItem.getIdentifier() == 5) {
-                //intent = new Intent(DrawerActivity.this, AdvancedActivity.class);
-            } else if (drawerItem.getIdentifier() == 7) {
+                intent = new Intent(MainActivity.this, FeedbackActivity.class);
+            } else if (drawerItem.getIdentifier() == 2000) {
                 //intent = new Intent(DrawerActivity.this, EmbeddedDrawerActivity.class);
-            } else if (drawerItem.getIdentifier() == 8) {
+            } else if (drawerItem.getIdentifier() == 2001) {
                 //intent = new Intent(DrawerActivity.this, FullscreenDrawerActivity.class);
-            } else if (drawerItem.getIdentifier() == 9) {
+            } else if (drawerItem.getIdentifier() == 2002) {
                 //intent = new Intent(DrawerActivity.this, CustomContainerActivity.class);
-            } else if (drawerItem.getIdentifier() == 10) {
+            } else if (drawerItem.getIdentifier() == 2003) {
                 //intent = new Intent(DrawerActivity.this, MenuDrawerActivity.class);
-            } else if (drawerItem.getIdentifier() == 11) {
+            } else if (drawerItem.getIdentifier() == 2004) {
                 //intent = new Intent(DrawerActivity.this, MiniDrawerActivity.class);
-            } else if (drawerItem.getIdentifier() == 12) {
+            } else if (drawerItem.getIdentifier() == 2005) {
                 //intent = new Intent(DrawerActivity.this, FragmentActivity.class);
             } else if (drawerItem.getIdentifier() == 13) {
                 //intent = new Intent(DrawerActivity.this, CollapsingToolbarActivity.class);
@@ -310,16 +301,5 @@ public class MainActivity extends AppCompatActivity implements BottomNavigatorVi
         bottomNavigatorView.select(position);
     }
 
-    public void execFloatingActionButton(){
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        if (fab != null) {
-            fab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Toast.makeText(MainActivity.this, "zidingyi ", Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
-    }
 
 }

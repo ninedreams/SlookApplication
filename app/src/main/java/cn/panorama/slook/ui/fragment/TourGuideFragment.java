@@ -17,6 +17,7 @@ import cn.panorama.slook.ui.R;
 
 /**
  * Created by xingyaoma on 16-4-29.
+ * 一级分类导游
  */
 public class TourGuideFragment extends Fragment {
 

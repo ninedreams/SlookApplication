@@ -33,8 +33,7 @@ import com.panoramagl.utils.PLUtils;
 /**
  * Created by xingyaoma on 16-4-29.
  */
-public class
-PanoramaActivity extends PLView {
+public class PanoramaActivity extends PLView {
     /**member variables*/
 
     private ZoomControls mZoomControls;

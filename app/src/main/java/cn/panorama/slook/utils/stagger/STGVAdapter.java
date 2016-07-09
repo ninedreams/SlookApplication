@@ -13,6 +13,10 @@ import java.util.ArrayList;
 
 import cn.panorama.slook.ui.R;
 
+
+/**
+ * 二级分类 特色 的 adapter
+ */
 public class STGVAdapter extends BaseAdapter {
     private Context mContext;
     private Application mAppContext;
@@ -33,6 +37,7 @@ public class STGVAdapter extends BaseAdapter {
             item.url = mData.url[i];
             item.width = mData.width[i];
             item.height = mData.height[i];
+            item.text = mData.text[i];
             mItems.add(item);
         }
     }
@@ -42,6 +47,7 @@ public class STGVAdapter extends BaseAdapter {
         item.url = mData.url[newPos];
         item.width = mData.width[newPos];
         item.height = mData.height[newPos];
+        item.text = mData.text[newPos];
         mItems.add(0, item);
         newPos = (newPos - 1) % 19;
     }
@@ -67,6 +73,7 @@ public class STGVAdapter extends BaseAdapter {
         final Item item = mItems.get(position);
 
         String url = item.url;
+        String text = item.text;
 
         if (convertView == null) {
             Holder holder = new Holder();
@@ -97,8 +104,7 @@ public class STGVAdapter extends BaseAdapter {
             }
         });
 
-        holder.tv_info.setText(position + " : " + item.width + "/" + item.height);
-
+        holder.tv_info.setText(text);
         holder.img_content.mHeight = item.height;
         holder.img_content.mWidth = item.width;
 

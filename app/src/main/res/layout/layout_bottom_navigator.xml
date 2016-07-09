@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
-            android:text="@string/unusual"
+            android:text="@string/place"
             android:textColor="@color/color_tab_text"
             android:textSize="12sp" />
     </LinearLayout>
@@ -44,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
-            android:text="@string/classfy"
+            android:text="@string/community"
             android:textColor="@color/color_tab_text"
             android:textSize="12sp" />
     </LinearLayout>

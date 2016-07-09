@@ -32,4 +32,8 @@
     <color name="colorWindowBackground">#f0f0f0</color>
     <color name="colorTabNormal">#666666</color>
     <color name="colorTabSelected">#536EEA</color>
+
+    <color name="backgroundColor">#E8E8E0</color>
+    <color name="backgroundColorPress">#DBDBD3</color>
+
 </resources>

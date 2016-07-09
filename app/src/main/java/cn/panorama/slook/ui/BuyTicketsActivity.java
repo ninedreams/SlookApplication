@@ -3,6 +3,10 @@ package cn.panorama.slook.ui;
 import android.app.Activity;
 import android.os.Bundle;
 
+/**
+ * 购票activity
+ */
+
 public class BuyTicketsActivity extends Activity {
 
     @Override

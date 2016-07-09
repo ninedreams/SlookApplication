@@ -16,6 +16,7 @@ import cn.panorama.slook.utils.TabLayout;
 
 /**
  * Created by xingyaoma on 16-4-29.
+ * 一级分类VR
  */
 public class VRFragment extends Fragment {
 
@@ -69,6 +70,7 @@ public class VRFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+
         tabLayout = (TabLayout) view.findViewById(R.id.tabLayout);
         tabLayout.setOnTabItemClickListener(new TabLayout.OnTabItemClickListener() {
             @Override
@@ -102,5 +104,6 @@ public class VRFragment extends Fragment {
         Fragment fragment = new VRFragment();
         return fragment;
     }
+
 
 }
