@@ -2,8 +2,10 @@ package cn.panorama.slook.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,6 +13,7 @@ import android.view.View;
 import android.widget.CompoundButton;
 
 import com.aspsine.fragmentnavigator.FragmentNavigator;
+import com.miguelcatalan.materialsearchview.MaterialSearchView;
 import com.mikepenz.fastadapter.utils.RecyclerViewCacheUtil;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
@@ -36,6 +39,8 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.mikepenz.materialdrawer.model.interfaces.Nameable;
 import com.mikepenz.octicons_typeface_library.Octicons;
 
+import java.util.ArrayList;
+
 import cn.panorama.slook.adapter.FragmentAdapter;
 import cn.panorama.slook.utils.BottomNavigatorView;
 
@@ -51,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigatorVi
     //顶部
     Toolbar toolbar;
     private static final int PROFILE_SETTING = 100000;
+    private MaterialSearchView searchView;
 
     //save our header or result
     private AccountHeader headerResult = null;
@@ -78,6 +84,38 @@ public class MainActivity extends AppCompatActivity implements BottomNavigatorVi
         // Handle Toolbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        searchView = (MaterialSearchView) this.findViewById(R.id.search_view_main);
+        searchView.setVoiceSearch(true);
+        searchView.setCursorDrawable(R.drawable.custom_cursor);
+        searchView.setSuggestions(getResources().getStringArray(R.array.query_suggestions));
+        searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                //Do some magic
+                return false;
+            }
+        });
+
+        searchView.setOnSearchViewListener(new MaterialSearchView.SearchViewListener() {
+            @Override
+            public void onSearchViewShown() {
+                //Do some magic
+            }
+
+            @Override
+            public void onSearchViewClosed() {
+                //Do some magic
+            }
+        });
+
+
 
         // Create a few sample profile
         // NOTE you have to define the loader logic too. See the CustomApplication for more details
@@ -184,25 +222,29 @@ public class MainActivity extends AppCompatActivity implements BottomNavigatorVi
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == MaterialSearchView.REQUEST_VOICE && resultCode == RESULT_OK) {
+            ArrayList<String> matches = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+            if (matches != null && matches.size() > 0) {
+                String searchWrd = matches.get(0);
+                if (!TextUtils.isEmpty(searchWrd)) {
+                    searchView.setQuery(searchWrd, false);
+                }
+            }
+
+            return;
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        MenuItem item = menu.findItem(R.id.action_search);
+        searchView.setMenuItem(item);
 
-        return super.onOptionsItemSelected(item);
+        return true;
     }
 
     private OnCheckedChangeListener onCheckedChangeListener = new OnCheckedChangeListener() {
@@ -232,10 +274,17 @@ public class MainActivity extends AppCompatActivity implements BottomNavigatorVi
         //handle the back press :D close the drawer first and if the drawer is closed close the activity
         if (result != null && result.isDrawerOpen()) {
             result.closeDrawer();
-        } else {
+        }
+        else if(searchView.isSearchOpen()) {
+            searchView.closeSearch();
+        }
+        else
+        {
             super.onBackPressed();
         }
+
     }
+
 
     /*
     **返回addDrawerItems所需要的DrawerItems组

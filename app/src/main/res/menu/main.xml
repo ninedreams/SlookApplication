@@ -1,34 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/menu_1"
-        android:orderInCategory="1"
-        android:title="Update Profile"
-        app:showAsAction="never" />
+        android:id="@+id/action_unread"
+        android:icon="@drawable/ic_markunread_black_24dp"
+        android:title="@string/collect"
+        app:showAsAction="ifRoom" />
+
     <item
-        android:id="@+id/menu_2"
-        android:orderInCategory="2"
-        android:title="Arrow-Icon"
-        app:showAsAction="never" />
+        android:id="@+id/action_copy"
+        android:icon="@drawable/ic_content_copy_black_24dp"
+        android:title="bgmusic"
+        app:showAsAction="ifRoom" />
+
     <item
-        android:id="@+id/menu_3"
-        android:orderInCategory="3"
-        android:title="Hamburger-Icon"
-        app:showAsAction="never" />
+        android:id="@+id/action_google"
+        android:icon="@drawable/ic_google_plus_box"
+        android:title="introuce"
+        app:showAsAction="ifRoom" />
+
     <item
-        android:id="@+id/menu_4"
-        android:orderInCategory="4"
-        android:title="CompactHeader"
-        app:showAsAction="never" />
+        android:id="@+id/action_facebook"
+        android:icon="@drawable/ic_facebook_box"
+        android:title="weibo"
+        app:showAsAction="ifRoom" />
+
     <item
-        android:id="@+id/menu_5"
-        android:orderInCategory="5"
-        android:title="NormalHeader"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:id="@+id/action_twitter"
+        android:icon="@drawable/ic_twitter_box"
+        android:title="wechat"
         app:showAsAction="ifRoom" />
 </menu>

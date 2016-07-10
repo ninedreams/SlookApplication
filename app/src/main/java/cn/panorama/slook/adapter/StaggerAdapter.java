@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 
 import com.etsy.android.grid.util.DynamicHeightTextView;
 import com.squareup.picasso.Picasso;
@@ -16,28 +15,30 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import cn.panorama.slook.ui.R;
-import cn.panorama.slook.utils.stagger.GridViewData;
-import cn.panorama.slook.utils.stagger.Item;
+import cn.panorama.slook.utils.stagger.StaggerImageView;
+import cn.panorama.slook.utils.stagger.StaggerItem;
+import cn.panorama.slook.utils.stagger.StaggerViewData;
 
 
 /**
  * 二级分类 特色 的 adapter
  */
 public class StaggerAdapter extends ArrayAdapter<String> {
-    private static final String TAG = "SampleAdapter";
+    private static final String TAG = "StaggerAdapter";
     private Application mAppContext;
     private Context mContext;
-    private GridViewData mData = new GridViewData();
-    private ArrayList<Item> mItems = new ArrayList<Item>();
+    private StaggerViewData mData = new StaggerViewData();
+    private ArrayList<StaggerItem> mItems = new ArrayList<StaggerItem>();
+
+    private int newPos = 19;
 
     static class ViewHolder {
-        DynamicHeightTextView txtLineOne;
-        ImageView img;
+        DynamicHeightTextView txinfo;
+        StaggerImageView img;
     }
 
     private final LayoutInflater mLayoutInflater;
     private final Random mRandom;
-    private final ArrayList<Integer> mBackgroundColors;
 
     private static final SparseArray<Double> sPositionHeightRatios = new SparseArray<Double>();
 
@@ -47,17 +48,12 @@ public class StaggerAdapter extends ArrayAdapter<String> {
         mContext = context;
         mLayoutInflater = LayoutInflater.from(context);
         mRandom = new Random();
-        mBackgroundColors = new ArrayList<Integer>();
-        mBackgroundColors.add(R.color.orange);
-        mBackgroundColors.add(R.color.baby_green);
-        mBackgroundColors.add(R.color.baby_blue);
-        mBackgroundColors.add(R.color.yellow);
-        mBackgroundColors.add(R.color.grey);
+        getMoreItem();
     }
 
     public void getMoreItem() {
-        for (int i = 0; i < 18; i++) {
-            Item item = new Item();
+        for (int i = 0; i < 20; i++) {
+            StaggerItem item = new StaggerItem();
             item.text = mData.text[i];
             item.url = mData.url[i];
             item.width = mData.width[i];
@@ -66,20 +62,30 @@ public class StaggerAdapter extends ArrayAdapter<String> {
         }
     }
 
-    @Override
-    public View getView(final int position, View convertView, final ViewGroup parent) {
+    public void getNewItem() {
+        StaggerItem item = new StaggerItem();
+        item.text = mData.text[newPos];
+        item.url = mData.url[newPos];
+        item.width = mData.width[newPos];
+        item.height = mData.width[newPos];
+        mItems.add(0, item);
+        newPos = (newPos - 1) % 19;
+    }
 
-        final Item item = mItems.get(position);
+    @Override
+    public View getView( int position, View convertView, ViewGroup parent) {
+
+        final StaggerItem item = mItems.get(position);
 
         String url = item.url;
         String text = item.text;
 
         ViewHolder vh;
         if (convertView == null) {
-            convertView = mLayoutInflater.inflate(R.layout.stagger_view, parent, false);
+            convertView = mLayoutInflater.inflate(R.layout.stagger_item, parent, false);
             vh = new ViewHolder();
-            vh.txtLineOne = (DynamicHeightTextView) convertView.findViewById(R.id.txt_line1);
-            vh.img = (ImageView) convertView.findViewById(R.id.stagger_img);
+            vh.txinfo = (DynamicHeightTextView) convertView.findViewById(R.id.tv_stagger);
+            vh.img = (StaggerImageView) convertView.findViewById(R.id.img_stagger);
 
             convertView.setTag(vh);
         }
@@ -88,19 +94,26 @@ public class StaggerAdapter extends ArrayAdapter<String> {
         }
 
         double positionHeight = getPositionRatio(position);
-        int backgroundIndex = position >= mBackgroundColors.size() ?
-                position % mBackgroundColors.size() : position;
-
-        convertView.setBackgroundResource(mBackgroundColors.get(backgroundIndex));
-
         //Log.d(TAG, "getView position:" + position + " h:" + positionHeight);
-
-        vh.txtLineOne.setHeightRatio(positionHeight);
-        vh.txtLineOne.setText(text);
+        //vh.txinfo.setHeightRatio(positionHeight);
+        vh.img.mWidth = item.width;
+        vh.img.mHeight = (int)(item.width * (mRandom.nextDouble() /2 +1));
+        vh.txinfo.setText(text);
         Picasso.with(mAppContext).load(url).into(vh.img);
 
         return convertView;
     }
+
+    @Override
+    public int getCount() {
+        return mItems == null ? 0 : mItems.size();
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return 0;
+    }
+
 
     private double getPositionRatio(final int position) {
         double ratio = sPositionHeightRatios.get(position, 0.0);
@@ -115,6 +128,7 @@ public class StaggerAdapter extends ArrayAdapter<String> {
         }
         return ratio;
     }
+
 
     private double getRandomHeightRatio() {
         return (mRandom.nextDouble() / 2.0) + 1.0; // height will be 1.0 - 1.5 the width

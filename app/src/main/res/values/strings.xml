@@ -91,6 +91,7 @@
     <string name="unusual">特色</string>
     <string name="classify">分类</string>
     <string name="title_activity_login">Sign in</string>
+    <string name="search">search</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>

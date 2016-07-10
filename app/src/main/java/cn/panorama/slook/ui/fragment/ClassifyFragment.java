@@ -1,7 +1,6 @@
 package cn.panorama.slook.ui.fragment;
 
 import android.annotation.TargetApi;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,22 +11,28 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
+
+import com.etsy.android.grid.StaggeredGridView;
 
 import java.lang.ref.WeakReference;
 
 import cn.panorama.slook.adapter.GridViewAdapter;
 import cn.panorama.slook.ui.R;
-import cn.panorama.slook.utils.stagger.StaggeredGridView;
 
 /**
  * Created by xingyaoma on 16-4-29.
  * 第一个分类特色里面的二级分类
  */
-public class ClassifyFragment extends Fragment {
+public class ClassifyFragment extends Fragment implements AbsListView.OnScrollListener, AbsListView.OnItemClickListener{
 
-    private StaggeredGridView gridView;
-    private GridViewAdapter gridViewAdapter;
+    //stagger
+    private StaggeredGridView sGridView;
+    private GridViewAdapter mAdapter;
+    private boolean mHasRequestedMore;
 
     public static final String TAG = ClassifyFragment.class.getSimpleName();
 
@@ -78,24 +83,6 @@ public class ClassifyFragment extends Fragment {
 
         this.view=inflater.inflate(R.layout.fragment_classify, container, false);
 
-        gridView = (StaggeredGridView) view.findViewById(R.id.gridview);
-
-        int margin = getResources().getDimensionPixelSize(R.dimen.stgv_margin);
-
-        gridView.setItemMargin(margin);
-        gridView.setPadding(margin, 0, margin, 0);
-
-        gridViewAdapter = new GridViewAdapter(getActivity().getApplicationContext(), getActivity().getApplication());
-        gridView.setAdapter(gridViewAdapter);
-        gridViewAdapter.notifyDataSetChanged();
-
-        gridView.setOnLoadmoreListener(new StaggeredGridView.OnLoadmoreListener() {
-            @Override
-            public void onLoadmore() {
-
-            }
-        });
-
         return view;
     }
 
@@ -111,6 +98,18 @@ public class ClassifyFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         loadData();
+        sGridView = (StaggeredGridView) view.findViewById(R.id.image_gridview);
+
+        if (mAdapter == null) {
+            mAdapter = new GridViewAdapter(getActivity(),getActivity().getApplication() , R.id.text_gridview);
+        }
+
+
+        sGridView.setAdapter(mAdapter);
+        mAdapter.notifyDataSetChanged();
+        sGridView.setOnScrollListener(this);
+        sGridView.setOnItemClickListener(this);
+
         Log.i(TAG, "onActivityCreated");
     }
 
@@ -156,28 +155,32 @@ public class ClassifyFragment extends Fragment {
         }
     }
 
-    public class LoadMoreTask extends AsyncTask<Void, Void, Void> {
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-        @Override
-        protected Void doInBackground(Void... params) {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            gridViewAdapter.getMoreItem();
-            gridViewAdapter.notifyDataSetChanged();
-            super.onPostExecute(result);
-        }
-
+    @Override
+    public void onScrollStateChanged(final AbsListView view, final int scrollState) {
+        Log.d(TAG, "onScrollStateChanged:" + scrollState);
     }
+
+    @Override
+    public void onScroll(final AbsListView view, final int firstVisibleItem, final int visibleItemCount, final int totalItemCount) {
+        Log.d(TAG, "onScroll firstVisibleItem:" + firstVisibleItem +
+                " visibleItemCount:" + visibleItemCount +
+                " totalItemCount:" + totalItemCount);
+        // our handling
+        if (!mHasRequestedMore) {
+            int lastInScreen = firstVisibleItem + visibleItemCount;
+            if (lastInScreen >= totalItemCount) {
+                Log.d(TAG, "onScroll lastInScreen - so load more");
+                mHasRequestedMore = true;
+                //onLoadMoreItems();
+            }
+        }
+    }
+
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+        Toast.makeText(getContext(), "Item Clicked: " + position, Toast.LENGTH_SHORT).show();
+    }
+
+
 }

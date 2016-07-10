@@ -7,7 +7,7 @@ public class GridViewData {
 
 
     public String url[] = {
-            "http://www.xingyaoma.club/pano/u_photo/classify_photo/univisity.jpg",
+            null,
             "http://media-cache-ak0.pinimg.com/736x/9c/ce/ef/9cceef143ae517e7841669a930afcce0.jpg",
             "http://media-cache-ak0.pinimg.com/736x/f4/0e/ea/f40eeadee9be166a7765a2fa8dc329ee.jpg",
             "http://media-cache-ak0.pinimg.com/736x/61/c2/7b/61c27ba27d8e4d1be5a4e9885e41437a.jpg",

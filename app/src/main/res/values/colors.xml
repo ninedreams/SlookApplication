@@ -23,6 +23,13 @@
     <color name="red">#F44336</color>
     <color name="cyan">#00BCD4</color>
     <color name="lime">#CDDC39</color>
+    <color name="orange">#ffffdc7e</color>
+    <color name="grey">#ffd3d3d3</color>
+    <color name="baby_green">#ff8dd304</color>
+    <color name="baby_blue">#ff82e0ff</color>
+    <color name="yellow">#fffffbae</color>
+    <color name="more_red">#fff10800</color>
+    <color name="list_item_pressed">#1A000000</color>
 
     <color name="accent_color">@color/blue</color>
     <color name="statusBarColor">@color/blue</color>
@@ -35,5 +42,9 @@
 
     <color name="backgroundColor">#E8E8E0</color>
     <color name="backgroundColorPress">#DBDBD3</color>
+
+    <color name="theme_primary_text_inverted">#ffffff</color>
+    <color name="theme_secondary_text_inverted">#8affffff</color>
+    <color name="theme_primary">#2196F3</color>
 
 </resources>

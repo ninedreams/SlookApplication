@@ -6,20 +6,19 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-    <cn.panorama.slook.utils.stagger.STGVImageView
-        android:id="@+id/img_content"
+    <cn.panorama.slook.utils.stagger.StaggerImageView
+        android:id="@+id/img_stagger"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#ddd"
         android:scaleType="centerCrop"/>
 
-    <TextView
-        android:id="@+id/tv_info"
+    <com.etsy.android.grid.util.DynamicHeightTextView
+        android:id="@+id/tv_stagger"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
         android:textColor="@color/md_black_1000"
-        android:layout_below="@id/img_content"
         android:background="#fff"/>
 
 </LinearLayout>

@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:padding="10dp"
+    android:padding="5dp"
+    android:orientation="horizontal"
     android:background="#ffffff"
-    android:orientation="vertical"
+    android:descendantFocusability="blocksDescendants"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <cn.panorama.slook.utils.stagger.STGVImageView
+    <cn.panorama.slook.utils.stagger.StaggerImageView
         android:id="@+id/image_gridview"
         android:scaleType="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <TextView
+    <com.etsy.android.grid.util.DynamicHeightTextView
         android:id="@+id/text_gridview"
-        android:textSize="12sp"
+        android:textSize="16sp"
         android:layout_marginTop="7.0dp"
-        android:textColor="@color/md_blue_400"
-        android:layout_gravity="center_horizontal|top"
+        android:textColor="@color/md_black_1000"
+        android:layout_gravity="start|bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-
-
-</LinearLayout>
+</FrameLayout>
 

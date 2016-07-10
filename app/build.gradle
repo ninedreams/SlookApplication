@@ -88,4 +88,11 @@ dependencies {
     compile 'com.malinskiy:superrecyclerview:1.1.4'
 
     compile 'com.github.clans:fab:1.6.4'
+
+    compile 'com.github.rubensousa:FloatingToolbar:1.0.0'
+
+    compile 'com.miguelcatalan:materialsearchview:1.4.0'
+
+    compile 'com.lapism:searchview:3.4'
+
 }
