@@ -1,6 +1,6 @@
 package cn.panorama.slook.utils.stagger;
 
-public class DataSet {
+public class StaggerViewData {
     public String url[] = {
             "http://media-cache-ak0.pinimg.com/736x/92/c3/92/92c39256180c5833348bf13f484c7118.jpg",
             "http://media-cache-ak0.pinimg.com/736x/9c/ce/ef/9cceef143ae517e7841669a930afcce0.jpg",
@@ -69,11 +69,11 @@ public class DataSet {
     };
 
     public String text[] = {
-        "slook1",
-            "slook2",
-            "slook3",
-            "slook4",
-            "slook5",
+            "北京科技大学",
+            "北京大学",
+            "清华大学",
+            "北京理工大学",
+            "北京航空航天大学",
             "slook6",
             "slook7",
             "slook8",

@@ -1,4 +1,4 @@
-package cn.panorama.slook.utils;
+package cn.panorama.slook.utils.stagger;
 
 /**
  * Created by xingyaoma on 16-5-21.
@@ -7,7 +7,7 @@ public class GridViewData {
 
 
     public String url[] = {
-            "http://123.206.31.191/pano/u_photo/classify_photo/univisity.jpg",
+            "http://www.xingyaoma.club/pano/u_photo/classify_photo/univisity.jpg",
             "http://media-cache-ak0.pinimg.com/736x/9c/ce/ef/9cceef143ae517e7841669a930afcce0.jpg",
             "http://media-cache-ak0.pinimg.com/736x/f4/0e/ea/f40eeadee9be166a7765a2fa8dc329ee.jpg",
             "http://media-cache-ak0.pinimg.com/736x/61/c2/7b/61c27ba27d8e4d1be5a4e9885e41437a.jpg",
@@ -24,15 +24,9 @@ public class GridViewData {
             "http://media-cache-ak0.pinimg.com/736x/8f/4e/f3/8f4ef30d53b3137034f539510062cd47.jpg",
             "http://media-cache-ec0.pinimg.com/736x/3e/16/5f/3e165fce7cb73211be5b5f78a426f0f7.jpg",
             "http://media-cache-ak0.pinimg.com/736x/90/fb/ab/90fbab0ef514bd47ea9bd81b78e43252.jpg",
-            "http://media-cache-ak0.pinimg.com/736x/d7/39/fa/d739fa2fe6ac409f50738767f83d1192.jpg",
-            "http://media-cache-ec0.pinimg.com/736x/37/28/85/37288502b44b06902708ceb6927cde42.jpg",
-            "http://media-cache-ak0.pinimg.com/736x/dd/d7/81/ddd7813ce56b431083e7ca006a759ad1.jpg",
-            "http://media-cache-ak0.pinimg.com/736x/dd/d7/81/ddd7813ce56b431083e7ca006a759ad1.jpg"
+            "http://media-cache-ak0.pinimg.com/736x/d7/39/fa/d739fa2fe6ac409f50738767f83d1192.jpg"
     };
     public int width[] = {
-            1000,
-            1000,
-            1000,
             1000,
             1000,
             1000,
@@ -53,9 +47,6 @@ public class GridViewData {
             1000
     };
     public int height[] = {
-            1000,
-            1000,
-            1000,
             1000,
             1000,
             1000,
@@ -94,10 +85,7 @@ public class GridViewData {
             "slook15",
             "slook16",
             "slook17",
-            "slook18",
-            "slook19",
-            "slook20",
-            "slook21"
+            "slook18"
 
     };
 }
