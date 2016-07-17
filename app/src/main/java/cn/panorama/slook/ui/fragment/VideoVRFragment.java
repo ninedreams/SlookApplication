@@ -34,6 +34,7 @@ public class VideoVRFragment extends Fragment {
 
     private View view;
     private FloatingActionButton mFab;
+    private int mPreviousVisibleItem;
 
     public VideoVRFragment(){
 
@@ -68,25 +69,15 @@ public class VideoVRFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        mFab = (FloatingActionButton) view.findViewById(R.id.fab_vrphoto);
-
-        mFab.hide(false);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mFab.show(true);
-                mFab.setShowAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.show_from_bottom));
-                mFab.setHideAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.hide_to_bottom));
-            }
-        }, 300);
-
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        mFab = (FloatingActionButton) view.findViewById(R.id.fab_vrvideo);
         listView = (ListView) view.findViewById(R.id.listview_vrvideo);
+
         if(mAdapter == null) {
             mAdapter = new VideoVRAdapter(getActivity(), getActivity().getApplication(), R.id.tv_title_videovr);
         }
@@ -110,8 +101,24 @@ public class VideoVRFragment extends Fragment {
             @Override
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
 
+                if (firstVisibleItem > mPreviousVisibleItem) {
+                    mFab.hide(true);
+                } else if (firstVisibleItem < mPreviousVisibleItem) {
+                    mFab.show(true);
+                }
+                mPreviousVisibleItem = firstVisibleItem;
             }
         });
+
+        mFab.hide(false);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mFab.show(true);
+                mFab.setShowAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.show_from_bottom));
+                mFab.setHideAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.hide_to_bottom));
+            }
+        }, 300);
 
     }
 
