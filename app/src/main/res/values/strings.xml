@@ -105,6 +105,14 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="show_all_content">显示全部</string>
 
+    <string name="ustb_introuce">北京科技大学（University of Science
+        Technology Beijing，USTB）是中华人民共和国教育部直属的一所以工科为主，
+        工学、理学、管理学、文学、经济学、法学等多学科协调发展的全国重点大学，是国家“211工程”、
+        “985工程优势学科创新平台”重点建设院校，入选“2011计划”、“卓越工程师教育培养计划”、
+        “高等学校学科创新引智计划（111计划）“、
+        “国家建设高水平大学公派研究生项目”，是北京高科大学联盟成员，设有研究生院。</string>
+    <string name="source">Source &lt;a href="https://en.wikipedia.org/wiki/Gorilla">Wikipedia&lt;/a></string>
 
 </resources>

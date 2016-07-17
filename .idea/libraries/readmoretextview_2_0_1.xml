@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="readmoretextview-2.0.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.borjabravo/readmoretextview/2.0.1/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.borjabravo/readmoretextview/2.0.1/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.borjabravo/readmoretextview/2.0.1/637e593f0531146401d5693c4b53ab310fd518ee/readmoretextview-2.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -116,7 +116,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigatorVi
         });
 
 
-
         // Create a few sample profile
         // NOTE you have to define the loader logic too. See the CustomApplication for more details
         final IProfile profile = new ProfileDrawerItem().withName("ninedreams").withEmail("xingyaoma@gmail.com").withIcon("https://avatars3.githubusercontent.com/u/1476232?v=3&s=460").withIdentifier(100);

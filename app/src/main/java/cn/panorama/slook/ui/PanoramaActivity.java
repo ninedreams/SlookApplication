@@ -1,33 +1,27 @@
 package cn.panorama.slook.ui;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.speech.RecognizerIntent;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.text.TextUtils;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.OvershootInterpolator;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ZoomControls;
 
-import com.github.rubensousa.floatingtoolbar.FloatingToolbar;
-import com.lapism.searchview.SearchAdapter;
-import com.lapism.searchview.SearchHistoryTable;
-import com.lapism.searchview.SearchItem;
-import com.lapism.searchview.SearchView;
+import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
 import com.panoramagl.PLCubicPanorama;
 import com.panoramagl.PLICamera;
 import com.panoramagl.PLIPanorama;
@@ -50,8 +44,6 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.panorama.slook.adapter.FabAdapter;
-
 /**
  * Created by xingyaoma on 16-4-29.
  */
@@ -60,17 +52,14 @@ public class PanoramaActivity extends PLView {
 
     private ZoomControls mZoomControls;
 
-    protected static final String EXTRA_KEY_VERSION = "version";
-    protected static final String EXTRA_KEY_THEME = "theme";
-    private static final String EXTRA_KEY_VERSION_MARGINS = "version_margins";
-    private static final String EXTRA_KEY_TEXT = "text";
-    protected DrawerLayout mDrawerLayout = null;
-    private SearchHistoryTable mHistoryDatabase;
-    private SearchView mSearchView;
-
     //浮动按钮
-    private FloatingToolbar mFloatingToolbar;
-    private FabAdapter mAdapter;
+    private List<FloatingActionMenu> menus = new ArrayList<>();
+    private FloatingActionButton fab4;
+    private FloatingActionButton fab5;
+    private FloatingActionButton fab6;
+    private FloatingActionMenu menuGreen;
+    private Handler mUiHandler = new Handler();
+
 
     private ProgressBar progressBar;
     private static Handler sHandler = new Handler(Looper.getMainLooper());
@@ -157,113 +146,10 @@ public class PanoramaActivity extends PLView {
 
     private void execSearchView() {
 
-        //mSearchView = (SearchView) findViewById(R.id.searchView);
-        //setSearchView();
-        mSearchView.setText(R.string.search);
-        mSearchView.setOnMenuClickListener(new SearchView.OnMenuClickListener() {
-            @Override
-            public void onMenuClick() {
-                finish();
-            }
-        });
 
-        //customSearchView();
-        mSearchView.open(false);
 
     }
 
-    protected void setSearchView() {
-        mHistoryDatabase = new SearchHistoryTable(this);
-
-        //mSearchView = (SearchView) findViewById(R.id.searchView);
-        if (mSearchView != null) {
-            mSearchView.setVersion(SearchView.VERSION_TOOLBAR);
-            mSearchView.setVersionMargins(SearchView.VERSION_MARGINS_TOOLBAR_BIG);
-            mSearchView.setHint(R.string.search);
-            mSearchView.setTextSize(16);
-            mSearchView.setDivider(false);
-            mSearchView.setVoice(true);
-            mSearchView.setVoiceText("Set permission on Android 6+ !");
-            mSearchView.setAnimationDuration(SearchView.ANIMATION_DURATION);
-            mSearchView.setShadowColor(ContextCompat.getColor(this, R.color.search_shadow_layout));
-            mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-                @Override
-                public boolean onQueryTextSubmit(String query) {
-                    //getData(query, 0);
-                    // mSearchView.close(false);
-                    return true;
-                }
-
-                @Override
-                public boolean onQueryTextChange(String newText) {
-                    return false;
-                }
-            });
-            mSearchView.setOnOpenCloseListener(new SearchView.OnOpenCloseListener() {
-                @Override
-                public void onOpen() {
-
-                }
-
-                @Override
-                public void onClose() {
-
-                }
-            });
-
-            List<SearchItem> suggestionsList = new ArrayList<>();
-            suggestionsList.add(new SearchItem("search1"));
-            suggestionsList.add(new SearchItem("search2"));
-            suggestionsList.add(new SearchItem("search3"));
-
-            SearchAdapter searchAdapter = new SearchAdapter(this, suggestionsList);
-            searchAdapter.setOnItemClickListener(new SearchAdapter.OnItemClickListener() {
-                @Override
-                public void onItemClick(View view, int position) {
-                    TextView textView = (TextView) view.findViewById(R.id.textView_item_text);
-                    String query = textView.getText().toString();
-                    //getData(query, position);
-                    // mSearchView.close(false);
-                }
-            });
-            mSearchView.setAdapter(searchAdapter);
-        }
-    }
-
-    protected void customSearchView() {
-        final Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            mSearchView.setVersion(extras.getInt(EXTRA_KEY_VERSION));
-            mSearchView.setVersionMargins(extras.getInt(EXTRA_KEY_VERSION_MARGINS));
-            mSearchView.setTheme(extras.getInt(EXTRA_KEY_THEME), true);
-            mSearchView.setText(extras.getString(EXTRA_KEY_TEXT));
-        }
-    }
-
-      //mDrawerLayout  问题可能性很大
-//    @Override
-//    public void onBackPressed() {
-//        if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
-//            mDrawerLayout.closeDrawer(GravityCompat.START);
-//        } else {
-//            finish();
-//            // NAV UTILS
-//        }
-//    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == SearchView.SPEECH_REQUEST_CODE && resultCode == RESULT_OK) {
-            List<String> results = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-            if (results != null && results.size() > 0) {
-                String searchWrd = results.get(0);
-                if (!TextUtils.isEmpty(searchWrd)) {
-                    mSearchView.setQuery(searchWrd);
-                }
-            }
-        }
-        super.onActivityResult(requestCode, resultCode, data);
-    }
 
     /**
      * This event is fired when root content view is created
@@ -451,45 +337,95 @@ public class PanoramaActivity extends PLView {
     @SuppressLint("NewApi")
     public void execFloatingActionButton(){
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        mFloatingToolbar = (FloatingToolbar) findViewById(R.id.floatingToolbar);
+        menuGreen = (FloatingActionMenu) findViewById(R.id.menu_green);
+        fab4 = (FloatingActionButton) findViewById(R.id.fab4);
+        fab5 = (FloatingActionButton) findViewById(R.id.fab5);
+        fab6 = (FloatingActionButton) findViewById(R.id.fab6);
 
-        mAdapter = new FabAdapter(new FabAdapter.ClickListener() {
+        final FloatingActionButton programFab1 = new FloatingActionButton(getActivity());
+        programFab1.setButtonSize(FloatingActionButton.SIZE_MINI);
+        programFab1.setLabelText(getString(R.string.app_name));
+        programFab1.setImageResource(R.mipmap.ic_edit);
+        menuGreen.addMenuButton(programFab1);
+        programFab1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onAdapterItemClick(MenuItem item) {
+            public void onClick(View v) {
+                programFab1.setLabelColors(ContextCompat.getColor(getActivity(), R.color.grey),
+                        ContextCompat.getColor(getActivity(), R.color.md_yellow_A200),
+                        ContextCompat.getColor(getActivity(), R.color.about_libraries_card));
+                programFab1.setLabelTextColor(ContextCompat.getColor(getActivity(), R.color.theme_accent));
+            }
+        });
+
+        menuGreen.hideMenuButton(false);
+        menus.add(menuGreen);
+        fab4.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        fab5.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        fab6.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
             }
         });
 
-        mFloatingToolbar.setClickListener(new FloatingToolbar.ItemClickListener() {
-            @Override
-            public void onItemClick(MenuItem menuItem) {
-
-            }
-
-            @Override
-            public void onItemLongClick(MenuItem menuItem) {
-
-            }
-        });
-        mFloatingToolbar.attachFab(fab);
-
-        // Usage with custom view
-        View customView = mFloatingToolbar.getCustomView();
-        if (customView != null) {
-            customView.setOnClickListener(new View.OnClickListener() {
+        int delay = 400;
+        for (final FloatingActionMenu menu : menus) {
+            mUiHandler.postDelayed(new Runnable() {
                 @Override
-                public void onClick(View v) {
-                    mFloatingToolbar.hide();
+                public void run() {
+                    menu.showMenuButton(true);
                 }
-            });
+            }, delay);
+            delay += 150;
         }
 
-        // How to edit current menu
-        Menu menu = mFloatingToolbar.getMenu();
-        menu.findItem(R.id.action_copy).setVisible(true);
-        mFloatingToolbar.setMenu(menu);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //fabEdit.show(true);
+            }
+        }, delay + 150);
+        createCustomAnimation();
+    }
 
+    private void createCustomAnimation() {
+        AnimatorSet set = new AnimatorSet();
+
+        ObjectAnimator scaleOutX = ObjectAnimator.ofFloat(menuGreen.getMenuIconView(), "scaleX", 1.0f, 0.2f);
+        ObjectAnimator scaleOutY = ObjectAnimator.ofFloat(menuGreen.getMenuIconView(), "scaleY", 1.0f, 0.2f);
+
+        ObjectAnimator scaleInX = ObjectAnimator.ofFloat(menuGreen.getMenuIconView(), "scaleX", 0.2f, 1.0f);
+        ObjectAnimator scaleInY = ObjectAnimator.ofFloat(menuGreen.getMenuIconView(), "scaleY", 0.2f, 1.0f);
+
+        scaleOutX.setDuration(50);
+        scaleOutY.setDuration(50);
+
+        scaleInX.setDuration(150);
+        scaleInY.setDuration(150);
+
+        scaleInX.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+                menuGreen.getMenuIconView().setImageResource(menuGreen.isOpened()
+                        ? R.mipmap.ic_close : R.mipmap.ic_star);
+            }
+        });
+
+        set.play(scaleOutX).with(scaleOutY);
+        set.play(scaleInX).with(scaleInY).after(scaleOutX);
+        set.setInterpolator(new OvershootInterpolator(2));
+
+        menuGreen.setIconToggleAnimatorSet(set);
     }
 
     public void showProgressBar(boolean show) {

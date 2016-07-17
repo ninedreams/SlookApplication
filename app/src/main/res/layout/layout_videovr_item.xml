@@ -1,6 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:dpv="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="120dp"
+    android:layout_height="120dp">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="120dp"
+            android:layout_height="120dp">
+            <ImageView
+                android:layout_marginTop="5.0dp"
+                android:layout_marginLeft="5.0dp"
+                android:id="@+id/img_videovr"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent">
+
+                        <TextView
+                            android:layout_marginLeft="5.0dp"
+                            android:id="@+id/tv_title_videovr"
+                            android:textSize="18sp"
+                            android:layout_marginTop="5dp"
+                            android:layout_width="200dp"
+                            android:layout_height="30dp" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp">
+
+                            <TextView
+                                android:layout_marginLeft="5.0dp"
+                                android:id="@+id/tv_size_videovr"
+                                android:textSize="12sp"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:id="@+id/tv_num_videovr"
+                                android:layout_marginLeft="5.0dp"
+                                android:textSize="12sp"
+                                android:layout_width="60dp"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <com.panwrona.downloadprogressbar.library.DownloadProgressBar
+                        android:id="@+id/dpv_videovr"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        dpv:circleBackgroundColor="@color/red_light_primary_color"
+                        dpv:progressBackgroundColor="@color/red_light_primary_color"
+                        dpv:progressColor="@color/red_text_icon_color"
+                        dpv:drawingColor="@color/red_text_icon_color"
+                        dpv:progressDuration="2000"
+                        dpv:resultDuration="5000"
+                        dpv:circleRadius="20dp"
+                        dpv:lineWidth="3dp"
+                        dpv:strokeWidth="3dp"
+                        dpv:overshootValue="2.5" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="5.0dp"
+                android:layout_marginLeft="5.0dp"
+                android:id="@+id/subtitle_tv_videovr"
+                android:layout_width="wrap_content"
+                android:textSize="14sp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <View
+        android:background="@color/primary_light"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dp"/>
 
 </LinearLayout>

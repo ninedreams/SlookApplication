@@ -1,45 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="query_suggestions">
-        <item>Android</item>
-        <item>iOS</item>
-        <item>SCALA</item>
-        <item>Ruby</item>
-        <item>JavaScript</item>
-        <item>C#</item>
-        <item>Python</item>
-        <item>C</item>
-        <item>C++</item>
-        <item>PHP</item>
-        <item>Go</item>
-        <item>Perl</item>
-        <item>Bash</item>
-        <item>Lua</item>
-        <item>R</item>
-        <item>TCL</item>
-        <item>Haskell</item>
-        <item>Objective C</item>
-        <item>Swift</item>
-        <item>Kotlin</item>
-        <item>jQuery</item>
-        <item>Development</item>
-        <item>Web</item>
-        <item>Ajax</item>
-        <item>Test</item>
-        <item>Testing</item>
-        <item>CookBook</item>
-        <item>Beagle</item>
-        <item>VMware</item>
-        <item>Less.js</item>
-        <item>IDE</item>
-        <item>Arduino</item>
-        <item>Xamarin</item>
-        <item>UI</item>
-        <item>Microsoft</item>
-        <item>Application</item>
-        <item>Development</item>
-        <item>JUnit</item>
-        <item>SQL</item>
-        <item>Beagle</item>
+        <item>北京科技大学</item>
+        <item>北京大学</item>
+        <item>清华大学</item>
+        <item>北京理工大学</item>
+        <item>颐和园</item>
+        <item>天坛</item>
+        <item>王府井</item>
+        <item>中关村</item>
+        <item>故宫</item>
+        <item>北京航空航天大学</item>
     </string-array>
 </resources>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context="cn.panorama.slook.ui.PanoramaActivity">
 
     <!--<com.lapism.searchview.SearchView-->
@@ -13,20 +13,47 @@
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent" />-->
 
-    <com.github.rubensousa.floatingtoolbar.FloatingToolbar
-        android:id="@+id/floatingToolbar"
-        android:layout_width="fill_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_gravity="bottom"
-        app:floatingMenu="@menu/main" />
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/menu_green"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        fab:menu_icon="@mipmap/ic_star"
+        fab:menu_animationDelayPerItem="0"
+        fab:menu_colorNormal="#43A047"
+        fab:menu_colorPressed="#2E7D32"
+        fab:menu_colorRipple="#1B5E20"
+        fab:menu_labels_maxLines="2"
+        fab:menu_labels_ellipsize="end">
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/ic_share_black_24dp"/>
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_edit"
+            fab:fab_label="Menu item 1"
+            style="@style/MenuButtonsGreen" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_edit"
+            fab:fab_label="Menu item 2"
+            style="@style/MenuButtonsGreen" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_edit"
+            fab:fab_label="@string/search"
+            style="@style/MenuButtonsGreen" />
+
+    </com.github.clans.fab.FloatingActionMenu>
 
 
     <ZoomControls
@@ -45,4 +72,4 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center" />
 
-</android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>

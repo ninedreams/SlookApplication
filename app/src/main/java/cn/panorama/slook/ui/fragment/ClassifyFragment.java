@@ -162,9 +162,6 @@ public class ClassifyFragment extends Fragment implements AbsListView.OnScrollLi
 
     @Override
     public void onScroll(final AbsListView view, final int firstVisibleItem, final int visibleItemCount, final int totalItemCount) {
-        Log.d(TAG, "onScroll firstVisibleItem:" + firstVisibleItem +
-                " visibleItemCount:" + visibleItemCount +
-                " totalItemCount:" + totalItemCount);
         // our handling
         if (!mHasRequestedMore) {
             int lastInScreen = firstVisibleItem + visibleItemCount;

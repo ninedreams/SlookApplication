@@ -5,11 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".fragment.UnusualVRFragment">
 
-    <ProgressBar
-        android:id="@+id/progressBar6"
-        style="?android:progressBarStyleLargeInverse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center" />
+
 
 </FrameLayout>

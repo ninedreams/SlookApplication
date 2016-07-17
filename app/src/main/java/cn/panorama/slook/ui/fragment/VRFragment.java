@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import com.aspsine.fragmentnavigator.FragmentNavigator;
 
-import cn.panorama.slook.adapter.ChildFragmentAdapter;
+import cn.panorama.slook.adapter.VRChildFragmentAdapter;
 import cn.panorama.slook.ui.R;
 import cn.panorama.slook.utils.TabLayout;
 
@@ -52,7 +52,7 @@ public class VRFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mNavigator = new FragmentNavigator(getChildFragmentManager(), new ChildFragmentAdapter(), R.id.childContainer);
+        mNavigator = new FragmentNavigator(getChildFragmentManager(), new VRChildFragmentAdapter(), R.id.childContainer);
         mNavigator.setDefaultPosition(0);
         mNavigator.onCreate(savedInstanceState);
     }

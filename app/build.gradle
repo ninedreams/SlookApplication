@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "cn.panorama.slook.ui"
-        minSdkVersion 15
+        minSdkVersion 19
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -93,6 +93,21 @@ dependencies {
 
     compile 'com.miguelcatalan:materialsearchview:1.4.0'
 
-    compile 'com.lapism:searchview:3.4'
+    compile 'com.yqritc:recyclerview-flexibledivider:1.4.0'
+
+    compile 'com.haozhang.libary:android-slanted-textview:1.2'
+
+    compile 'com.borjabravo:readmoretextview:2.0.1'
+
+    compile 'com.github.panwrona:DownloadProgressBar:1.1'
+
+    //VR https://developers.google.com/vr/android/
+    compile project(':audio' )
+    compile project(':common' )
+    compile project(':commonwidget')
+    compile project(':panowidget')
+    compile project(':videowidget')
 
 }
+
+

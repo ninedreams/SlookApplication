@@ -71,7 +71,7 @@ public class GridViewAdapter extends ArrayAdapter<String> {
 
     @Override
     public String getItem(int position) {
-        return String.valueOf(position);
+        return null;
     }
 
 
@@ -84,7 +84,7 @@ public class GridViewAdapter extends ArrayAdapter<String> {
         String text = item.text;
 
         if (convertView == null) {
-            Holder holder = new Holder();
+            ViewHolder holder = new ViewHolder();
             view = View.inflate(mContext, R.layout.grid_item, null);
             holder.img_content = (StaggerImageView) view.findViewById(R.id.image_gridview);
             holder.tv_info = (TextView) view.findViewById(R.id.text_gridview);
@@ -94,7 +94,7 @@ public class GridViewAdapter extends ArrayAdapter<String> {
             view = convertView;
         }
 
-        Holder holder = (Holder) view.getTag();
+        ViewHolder holder = (ViewHolder) view.getTag();
 
         holder.tv_info.setText(text);
         if(holder.tv_info.getId() == 0){
@@ -111,7 +111,7 @@ public class GridViewAdapter extends ArrayAdapter<String> {
         return view;
     }
 
-    class Holder {
+    class ViewHolder {
         StaggerImageView img_content;
         TextView tv_info;
     }

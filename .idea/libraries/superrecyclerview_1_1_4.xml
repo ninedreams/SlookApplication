@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="superrecyclerview-1.1.4">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.malinskiy/superrecyclerview/1.1.4/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.malinskiy/superrecyclerview/1.1.4/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.malinskiy/superrecyclerview/1.1.4/7c70f117fec0636d7145c1c282f0b2abebc3ef12/superrecyclerview-1.1.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -6,25 +6,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="cn.panorama.slook.ui.fragment.PhotoVRFragment">
 
-    <ProgressBar
-        android:id="@+id/progressBar4"
-        style="?android:progressBarStyleLargeInverse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center" />
 
     <ListView
-        android:id="@+id/listvie_vrphoto"
+        android:id="@+id/listview_vrphoto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"/>
 
     <com.github.clans.fab.FloatingActionButton
         android:id="@+id/fab_vrphoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
-        android:layout_marginBottom="12dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
         android:src="@mipmap/ic_edit"
         app:fab_elevationCompat="4dp" />
 
