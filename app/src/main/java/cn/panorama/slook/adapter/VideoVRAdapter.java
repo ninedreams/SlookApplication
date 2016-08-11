@@ -14,8 +14,8 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 import cn.panorama.slook.ui.R;
-import cn.panorama.slook.utils.VideoVRData;
-import cn.panorama.slook.utils.VideoVRItem;
+import cn.panorama.slook.data.VideoVRData;
+import cn.panorama.slook.data.VideoVRItem;
 
 /**
  * Created by xingyaoma on 16-7-14.

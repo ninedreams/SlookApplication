@@ -68,24 +68,24 @@ public class GridViewData {
     };
 
     public String text[] = {
-            "slook1",
-            "slook2",
-            "slook3",
-            "slook4",
-            "slook5",
-            "slook6",
-            "slook7",
-            "slook8",
-            "slook9",
-            "slook10",
-            "slook11",
-            "slook12",
-            "slook13",
-            "slook14",
-            "slook15",
-            "slook16",
-            "slook17",
-            "slook18"
+            "热门",
+            "校园",
+            "博物馆",
+            "动物园",
+            "街道",
+            "经典",
+            "河流",
+            "历史",
+            "湖泊",
+            "古城",
+            "现代",
+            "公园",
+            "纪念馆",
+            "园林",
+            "广场",
+            "楼盘",
+            "乡村",
+            "更多"
 
     };
 }

@@ -6,7 +6,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-    <cn.panorama.slook.utils.stagger.StaggerImageView
+    <cn.panorama.slook.view.StaggerImageView
         android:id="@+id/img_stagger"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

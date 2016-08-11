@@ -87,6 +87,7 @@
     <string name="mine">我</string>
     <string name="panorama">全景</string>
     <string name="vr">VR</string>
+    <string name="ar">AR</string>
     <string name="tour_guide">导游</string>
     <string name="unusual">特色</string>
     <string name="classify">分类</string>
@@ -113,6 +114,52 @@
         “985工程优势学科创新平台”重点建设院校，入选“2011计划”、“卓越工程师教育培养计划”、
         “高等学校学科创新引智计划（111计划）“、
         “国家建设高水平大学公派研究生项目”，是北京高科大学联盟成员，设有研究生院。</string>
-    <string name="source">Source &lt;a href="https://en.wikipedia.org/wiki/Gorilla">Wikipedia&lt;/a></string>
+    <string name="source">Source &lt;a href="http://www.ninedreams.cn/msg/ustb">Slook&lt;/a></string>
+
+    <string name="bus">公交</string>
+    <string name="food">美食</string>
+    <string name="hotel">酒店</string>
+    <string name="market">商场</string>
+    <string name="entertainment">娱乐</string>
+    <string name="viewspot">景点</string>
+    <string name="wc">厕所</string>
+    <string name="bank">银行</string>
+    <string name="hint_search">查找地点、公交、地铁</string>
+    <string name="map">地图</string>
+    <string name="camera">实景</string>
+    <string name="index">主页</string>
+    <string name="finish">结束</string>
+    <string name="browse">全览</string>
+    <string name="location">当前位置: </string>
+    <string name="road">当前道路: </string>
+    <string name="radius">范围</string>
+    <string name="weather">天气</string>
+    <string name="forecastWeather">预报天气</string>
+    <string name="na">N/A</string>
+    <string name="city_list">城市列表</string>
+    <string name="download_manage">下载管理</string>
+    <string name="hint_search_offlinemap">请输入城市名称</string>
+    <string name="hot_region">热门地区</string>
+    <string name="all_region">全部地区</string>
+    <string name="related_city">相关城市</string>
+    <string name="offlinemap_download_tip">当前为WIFI网络，切换至运营商流量会自动取消下载</string>
+    <string name="check_update">检测更新</string>
+    <string name="all_download">全部下载</string>
+    <string name="all_cancel">全部取消</string>
+    <string name="download_map">下载地图</string>
+    <string name="download_cancel">取消下载</string>
+    <string name="remove_map">删除地图</string>
+    <string name="cancel">取消</string>
+    <string name="geopoint_sign">标记地点</string>
+    <string name="amappoi">高德兴趣点</string>
+    <string name="userpoi">用户兴趣点</string>
+
+    <string name="default_progressbar">Default Progressbar:</string>
+    <string name="dialog_default_title">Here\'s a message!</string>
+    <string name="dialog_ok">确认</string>
+    <string name="dialog_cancel">取消</string>
+    <string name="LOADING">请稍等</string>
+    <string name="dialog_input_title">添加标签</string>
+    <string name="dialog_input_content">请输入标签名</string>
 
 </resources>

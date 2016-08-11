@@ -15,9 +15,9 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import cn.panorama.slook.ui.R;
-import cn.panorama.slook.utils.stagger.StaggerImageView;
-import cn.panorama.slook.utils.stagger.StaggerItem;
-import cn.panorama.slook.utils.stagger.StaggerViewData;
+import cn.panorama.slook.view.StaggerImageView;
+import cn.panorama.slook.data.StaggerItem;
+import cn.panorama.slook.data.StaggerViewData;
 
 
 /**

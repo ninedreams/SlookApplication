@@ -22,4 +22,13 @@
         android:text="@string/classify"
         android:textColor="@color/color_tab_text" />
 
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center"
+        android:text="@string/tour_guide"
+        android:textColor="@color/color_tab_text" />
+
 </merge>

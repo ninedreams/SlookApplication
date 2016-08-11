@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/commonwidget/commonwidget.iml" filepath="$PROJECT_DIR$/commonwidget/commonwidget.iml" />
       <module fileurl="file://$PROJECT_DIR$/panowidget/panowidget.iml" filepath="$PROJECT_DIR$/panowidget/panowidget.iml" />
       <module fileurl="file://$PROJECT_DIR$/videowidget/videowidget.iml" filepath="$PROJECT_DIR$/videowidget/videowidget.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xAlertDialogLibrary/xAlertDialogLibrary.iml" filepath="$PROJECT_DIR$/xAlertDialogLibrary/xAlertDialogLibrary.iml" />
     </modules>
   </component>
 </project>

@@ -5,9 +5,9 @@ import android.support.v4.app.Fragment;
 
 import com.aspsine.fragmentnavigator.FragmentNavigatorAdapter;
 
+import cn.panorama.slook.ui.fragment.ARFragment;
 import cn.panorama.slook.ui.fragment.CommunityFragment;
 import cn.panorama.slook.ui.fragment.PlaceFragment;
-import cn.panorama.slook.ui.fragment.TourGuideFragment;
 import cn.panorama.slook.ui.fragment.VRFragment;
 
 /**
@@ -15,7 +15,7 @@ import cn.panorama.slook.ui.fragment.VRFragment;
  */
 public class FragmentAdapter implements FragmentNavigatorAdapter {
 
-    private static final String TABS[] = {"特色", "社区", "VR", "导游"};
+    private static final String TABS[] = {"特色", "社区", "VR", "AR"};
 
     @Override
     public Fragment onCreateFragment(int position) {
@@ -29,7 +29,7 @@ public class FragmentAdapter implements FragmentNavigatorAdapter {
             return VRFragment.newInstance(position);
 
         if (position == 3)
-            return TourGuideFragment.newInstance(TABS[position]);
+            return ARFragment.newInstance(TABS[position]);
 
         return null;
 
@@ -48,7 +48,7 @@ public class FragmentAdapter implements FragmentNavigatorAdapter {
             return VRFragment.TAG;
 
         if (position == 3)
-            return TourGuideFragment.TAG + TABS[position];
+            return ARFragment.TAG + TABS[position];
 
         return null;
 

@@ -1,6 +1,7 @@
 package cn.panorama.slook.ui.fragment;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -31,6 +32,7 @@ public class VideoVRFragment extends Fragment {
 
     private VideoVRAdapter mAdapter;
     private ListView listView;
+    private Uri fileUri;   //传递资源坐在的路径
 
     private View view;
     private FloatingActionButton mFab;
@@ -87,8 +89,48 @@ public class VideoVRFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent =null;
+                switch(position){
+                    case 0:
+                        fileUri = Uri.parse("http://www.ninedreams.cn/images/videos/congo.mp4");
+                        intent = new Intent(getActivity(), VideoVRActivity.class);
+                        intent.setData(fileUri);
+                        //intent.setAction(Intent.ACTION_VIEW);
+                        break;
+                    case 1:
+                        intent = new Intent(getActivity(), VideoVRActivity.class);
+                        break;
+                    case 2:
+                        intent = new Intent(getActivity(), VideoVRActivity.class);
+                        break;
+                    case 3:
+                        intent = new Intent(getActivity(), VideoVRActivity.class);
+                        break;
+                    case 4:
+                        intent = new Intent(getActivity(), VideoVRActivity.class);
+                        break;
+                    case 5:
+                        intent = new Intent(getActivity(), VideoVRActivity.class);
+                        break;
+                    case 6:
+                        intent = new Intent(getActivity(), VideoVRActivity.class);
+                        break;
+                    case 7:
+                        intent = new Intent(getActivity(), VideoVRActivity.class);
+                        break;
+                    case 8:
+                        intent = new Intent(getActivity(), VideoVRActivity.class);
+                        break;
+                    case 9:
+                        intent = new Intent(getActivity(), VideoVRActivity.class);
+                        break;
+                    case 10:
+                        intent = new Intent(getActivity(), VideoVRActivity.class);
+                        break;
+                    default:break;
+                }
 
-                startActivity(new Intent(getActivity(), VideoVRActivity.class));
+                startActivity(intent);
             }
         });
 

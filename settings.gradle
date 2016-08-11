@@ -2,3 +2,4 @@ include ':app', ':audio', ':common', ':commonwidget', ':panowidget', ':videowidg
 
 
 
+include ':xAlertDialogLibrary'

@@ -8,7 +8,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <cn.panorama.slook.utils.stagger.StaggerImageView
+    <cn.panorama.slook.view.StaggerImageView
         android:id="@+id/image_gridview"
         android:scaleType="center"
         android:layout_width="match_parent"

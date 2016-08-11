@@ -222,12 +222,12 @@ public class PanoramaActivity extends PLView {
             this.setLocked(true);
             //Create panorama
             PLCubicPanorama cubicPanorama = new PLCubicPanorama();
-            cubicPanorama.setImage(new PLImage(PLUtils.getBitmap(context, R.raw.final_f), false), PLCubeFaceOrientation.PLCubeFaceOrientationFront);
-            cubicPanorama.setImage(new PLImage(PLUtils.getBitmap(context, R.raw.final_b), false), PLCubeFaceOrientation.PLCubeFaceOrientationBack);
-            cubicPanorama.setImage(new PLImage(PLUtils.getBitmap(context, R.raw.final_l), false), PLCubeFaceOrientation.PLCubeFaceOrientationLeft);
-            cubicPanorama.setImage(new PLImage(PLUtils.getBitmap(context, R.raw.final_r), false), PLCubeFaceOrientation.PLCubeFaceOrientationRight);
-            cubicPanorama.setImage(new PLImage(PLUtils.getBitmap(context, R.raw.final_u), false), PLCubeFaceOrientation.PLCubeFaceOrientationUp);
-            cubicPanorama.setImage(new PLImage(PLUtils.getBitmap(context, R.raw.final_d), false), PLCubeFaceOrientation.PLCubeFaceOrientationDown);
+            cubicPanorama.setImage(new PLImage(PLUtils.getBitmap(context, R.raw.ustb1_f), false), PLCubeFaceOrientation.PLCubeFaceOrientationFront);
+            cubicPanorama.setImage(new PLImage(PLUtils.getBitmap(context, R.raw.ustb1_b), false), PLCubeFaceOrientation.PLCubeFaceOrientationBack);
+            cubicPanorama.setImage(new PLImage(PLUtils.getBitmap(context, R.raw.ustb1_l), false), PLCubeFaceOrientation.PLCubeFaceOrientationLeft);
+            cubicPanorama.setImage(new PLImage(PLUtils.getBitmap(context, R.raw.ustb1_r), false), PLCubeFaceOrientation.PLCubeFaceOrientationRight);
+            cubicPanorama.setImage(new PLImage(PLUtils.getBitmap(context, R.raw.ustb1_u), false), PLCubeFaceOrientation.PLCubeFaceOrientationUp);
+            cubicPanorama.setImage(new PLImage(PLUtils.getBitmap(context, R.raw.ustb1_d), false), PLCubeFaceOrientation.PLCubeFaceOrientationDown);
             panorama = cubicPanorama;
 
             if(panorama != null)

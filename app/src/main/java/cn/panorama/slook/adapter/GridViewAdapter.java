@@ -12,9 +12,9 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 import cn.panorama.slook.ui.R;
-import cn.panorama.slook.utils.stagger.GridViewData;
-import cn.panorama.slook.utils.stagger.StaggerImageView;
-import cn.panorama.slook.utils.stagger.StaggerItem;
+import cn.panorama.slook.data.GridViewData;
+import cn.panorama.slook.view.StaggerImageView;
+import cn.panorama.slook.data.StaggerItem;
 
 /**
  * Created by xingyaoma on 16-5-21.

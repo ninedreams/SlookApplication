@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/commonwidget" />
             <option value="$PROJECT_DIR$/panowidget" />
             <option value="$PROJECT_DIR$/videowidget" />
+            <option value="$PROJECT_DIR$/xAlertDialogLibrary" />
           </set>
         </option>
         <option name="myModules">
@@ -25,6 +26,7 @@
             <option value="$PROJECT_DIR$/commonwidget" />
             <option value="$PROJECT_DIR$/panowidget" />
             <option value="$PROJECT_DIR$/videowidget" />
+            <option value="$PROJECT_DIR$/xAlertDialogLibrary" />
           </set>
         </option>
       </GradleProjectSettings>

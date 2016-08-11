@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import com.aspsine.fragmentnavigator.FragmentNavigatorAdapter;
 
 import cn.panorama.slook.ui.fragment.ClassifyFragment;
+import cn.panorama.slook.ui.fragment.TourGuideFragment;
 import cn.panorama.slook.ui.fragment.UnusualFragment;
 
 /**
@@ -12,7 +13,7 @@ import cn.panorama.slook.ui.fragment.UnusualFragment;
  */
 public class PlaceChildFragmentAdapter implements FragmentNavigatorAdapter {
 
-    public static final String[] TABS = {"特色", "分类"};
+    public static final String[] TABS = {"特色", "分类","导游"};
 
     @Override
     public Fragment onCreateFragment(int position) {
@@ -21,6 +22,8 @@ public class PlaceChildFragmentAdapter implements FragmentNavigatorAdapter {
             return UnusualFragment.newInstance(TABS[position]);
         if(position == 1)
             return ClassifyFragment.newInstance(TABS[position]);
+        if(position == 2)
+            return TourGuideFragment.newInstance(TABS[position]);
 
         return null;
     }
@@ -32,6 +35,8 @@ public class PlaceChildFragmentAdapter implements FragmentNavigatorAdapter {
             return UnusualFragment.TAG + TABS[position];
         if(position == 1)
             return ClassifyFragment.TAG + TABS[position];
+        if(position == 2)
+            return TourGuideFragment.TAG + TABS[position];
 
         return null;
     }

@@ -1,6 +1,7 @@
 package cn.panorama.slook.ui.fragment;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -14,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.github.clans.fab.FloatingActionButton;
+import com.google.vr.sdk.widgets.pano.VrPanoramaView;
 
 import cn.panorama.slook.adapter.PhotoVRAdapter;
 import cn.panorama.slook.ui.PanoVRActivity;
@@ -32,6 +34,10 @@ public class PhotoVRFragment extends Fragment {
 
     private ListView listview;
     private int mPreviousVisibleItem;
+    /** Tracks the file to be loaded across the lifetime of this app. **/
+    private Uri fileUri;
+    /** Configuration information for the panorama. **/
+    private VrPanoramaView.Options panoOptions = new VrPanoramaView.Options();
 
     private PhotoVRAdapter adapter;
 
@@ -75,7 +81,6 @@ public class PhotoVRFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-
         listview = (ListView) view.findViewById(R.id.listview_vrphoto);
         mFab = (FloatingActionButton) view.findViewById(R.id.fab_vrphoto);
 
@@ -88,7 +93,76 @@ public class PhotoVRFragment extends Fragment {
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(getActivity(), PanoVRActivity.class));
+                Intent intent =null;
+                switch(position){
+                    case 0:
+                        fileUri = Uri.parse("http://www.ninedreams.cn/images/output/ustb_westdoor/ustb_westdoor.jpg");
+                        intent = new Intent(getActivity(), PanoVRActivity.class);
+                        intent.setData(fileUri);
+                        intent.putExtra("inputType", 0);
+                        intent.setAction(Intent.ACTION_VIEW);
+                        break;
+                    case 1:
+                        fileUri = Uri.parse("http://www.ninedreams.cn/images/output/ustb_playground/ustb_playground.jpg");
+                        intent = new Intent(getActivity(), PanoVRActivity.class);
+                        intent.setData(fileUri);
+                        intent.putExtra("inputType", 1);
+                        intent.setAction(Intent.ACTION_VIEW);
+                        break;
+                    case 2:
+                        fileUri = Uri.parse("http://www.ninedreams.cn/images/output/ustb_library/ustb_library.jpg");
+                        intent = new Intent(getActivity(), PanoVRActivity.class);
+                        intent.setData(fileUri);
+                        intent.putExtra("inputType", 2);
+                        intent.setAction(Intent.ACTION_VIEW);
+                        break;
+                    case 3:
+                        fileUri = Uri.parse("http://www.ninedreams.cn/images/output/beijing1/beijing1.jpg");
+                        intent = new Intent(getActivity(), PanoVRActivity.class);
+                        intent.setData(fileUri);
+                        intent.putExtra("inputType", 3);
+                        intent.setAction(Intent.ACTION_VIEW);
+                        break;
+                    case 4:
+                        fileUri = Uri.parse("http://www.ninedreams.cn/images/output/ustb_westdoor/ustb_westdoor.jpg");
+                        intent = new Intent(getActivity(), PanoVRActivity.class);
+                        intent.setData(fileUri);
+                        intent.putExtra("inputType", 0);
+                        intent.setAction(Intent.ACTION_VIEW);
+                        break;
+                    case 5:
+                        fileUri = Uri.parse("http://www.ninedreams.cn/images/output/ustb_playground/ustb_playground.jpg");
+                        intent = new Intent(getActivity(), PanoVRActivity.class);
+                        intent.setData(fileUri);
+                        intent.putExtra("inputType", 1);
+                        intent.setAction(Intent.ACTION_VIEW);
+                        break;
+                    case 6:
+                        fileUri = Uri.parse("http://www.ninedreams.cn/images/output/ustb_library/ustb_library.jpg");
+                        intent = new Intent(getActivity(), PanoVRActivity.class);
+                        intent.setData(fileUri);
+                        intent.putExtra("inputType", 2);
+                        intent.setAction(Intent.ACTION_VIEW);
+                    case 7:
+                        fileUri = Uri.parse("http://www.ninedreams.cn/images/output/beijing1/beijing1.jpg");
+                        intent = new Intent(getActivity(), PanoVRActivity.class);
+                        intent.setData(fileUri);
+                        intent.putExtra("inputType", 3);
+                        intent.setAction(Intent.ACTION_VIEW);
+                        break;
+                    case 8:
+                        intent = new Intent(getActivity(), PanoVRActivity.class);
+                        break;
+                    case 9:
+                        intent = new Intent(getActivity(), PanoVRActivity.class);
+                        break;
+                    case 10:
+                        intent = new Intent(getActivity(), PanoVRActivity.class);
+                        break;
+                    default:break;
+                }
+
+                startActivity(intent);
             }
         });
 

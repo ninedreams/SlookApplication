@@ -12,4 +12,39 @@
         <item>故宫</item>
         <item>北京航空航天大学</item>
     </string-array>
+
+    <!-- 导航指示图标 0为缺省 -->
+    <string-array name="navi_turn">
+        <item name="0">0</item>
+        <item name="1">0</item>
+        <item name="2">@mipmap/ic_navi_turn_left</item>
+        <item name="3">@mipmap/ic_navi_turn_right</item>
+        <item name="4">@mipmap/ic_navi_turn_front_left</item>
+        <item name="5">@mipmap/ic_navi_turn_front_right</item>
+        <item name="6">@mipmap/ic_navi_turn_left_back_2</item>
+        <item name="7">@mipmap/ic_navi_turn_right_back_2</item>
+        <item name="8">@mipmap/ic_navi_turn_left_back</item>
+        <item name="9">@mipmap/ic_navi_turn_front</item>
+        <item name="10">0</item>
+    </string-array>
+
+    <string-array name="slidebar_menu_array">
+        <item>搜索范围</item>
+        <item>预报天气</item>
+        <item>离线地图</item>
+        <item>标记地点</item>
+    </string-array>
+
+
+    <string-array name="offlinmap_hot_region">
+        <item>全国概要图</item>
+        <item>北京市</item>
+        <item>上海市</item>
+        <item>广州市</item>
+        <item>深圳市</item>
+        <item>成都市</item>
+        <item>杭州市</item>
+    </string-array>
+
+
 </resources>

@@ -162,6 +162,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigatorVi
                 .withItemAnimator(new AlphaCrossFadeAnimator())
                 .withAccountHeader(headerResult) //set the AccountHeader we created earlier for the header
                 .addDrawerItems(
+                        new PrimaryDrawerItem().withName(R.string.vr).withIcon(GoogleMaterial.Icon.gmd_ac_unit).withIdentifier(0).withSelectable(false),
                         new PrimaryDrawerItem().withName(R.string.buytickets).withIcon(GoogleMaterial.Icon.gmd_ac_unit).withIdentifier(1).withSelectable(false),
                         new PrimaryDrawerItem().withName(R.string.frineds).withIcon(FontAwesome.Icon.faw_home).withIdentifier(2).withSelectable(false),
                         new PrimaryDrawerItem().withName(R.string.share).withIcon(FontAwesome.Icon.faw_gamepad).withIdentifier(3).withSelectable(false),
@@ -295,6 +296,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigatorVi
     private void skipActivity(View view, int position, IDrawerItem drawerItem){
         if (drawerItem != null) {
             Intent intent = null;
+
             if (drawerItem.getIdentifier() == 1) {
                 intent = new Intent(MainActivity.this, BuyTicketsActivity.class);
             } else if (drawerItem.getIdentifier() == 2) {
@@ -328,6 +330,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigatorVi
                 //        .withFields(R.string.class.getFields())
                  //       .withActivityStyle(Libs.ActivityStyle.LIGHT_DARK_TOOLBAR)
                  //       .intent(DrawerActivity.this);
+            }else if (drawerItem.getIdentifier() == 0) {
+                intent = new Intent(MainActivity.this, MixActivity.class);
             }
             if (intent != null) {
                 MainActivity.this.startActivity(intent);

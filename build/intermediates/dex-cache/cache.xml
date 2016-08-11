@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="82ce13fd19cdfde0e392f03c27edeba8d4333648">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-23.3.0_ae567cb5eb394988eccb1867b8561059a57f53d2/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/5.2.2/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="0f9dafee0fcc236662f6af1f17d3ecb911131081">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mikepenz-materialdrawer-5.2.2_a8ff5658709201fc7ec3aed5d4c60ea04c532824/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="0874286cc2fd88d54fdf130e9d5372730da6de97">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.0.0_629f56f1270780c1bd9f7262b1b246f5f59d3723/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/libs/AMap3DMap_3.4.0_AMapNavi_1.9.1_AMapSearch_3.3.0_AMapLocation_2.7.0_20160809.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c42f4396c387061b95e5683306c00e0277ca8dcc">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/2/AMap3DMap_3.4.0_AMapNavi_1.9.1_AMapSearch_3.3.0_AMapLocation_2.7.0_20160809_99977e32ec1a112b8eafa7137842f19376b0d41d/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="f6c8261c6f1895ec658216edbd84a4f521bac744">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_82971e35c3149b32a4308cbaee83d6fe6c01f90c/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.github.clans/fab/1.6.4/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="1c3b9743fe8bb166a90a7e98b9b9f1f8021d80cd">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.clans-fab-1.6.4_8516cf893b0dc819861e2fbae92b910c3d9b2f31/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.etsy.android.grid/library/1.0.5/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="8218789edb56bdcfff7da48e892b37460fc707e2">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.etsy.android.grid-library-1.0.5_eb2ddc958a74f6021027e525395fdc3732ba0079/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/24.0.0/2943c74db6d4346ab8c6531adac91fa05c137c40/support-annotations-24.0.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.0.0_6951b9233e1787b871bc0d28896c5c5d54db02ca/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.7.0/9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4/glide-3.7.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/glide-3.7.0_c93bfa9151d09a3b809a77358fe45e643fd150f8/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.mikepenz/materialize/0.8.8/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="197c431b8fc427f77e02997e299bd6b9bef58ede">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mikepenz-materialize-0.8.8_1dd8720efa4f87ab5efb7d44780a9c635bf45af5/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.mikepenz/octicons-typeface/3.2.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="b1e24161fcf88ca05a3f868d7f98de30beac5e64">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mikepenz-octicons-typeface-3.2.0.1_19576f0f62e682cb3217df27dea534b4eff3eeb2/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.mikepenz/google-material-typeface/2.2.0.1.original/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="53e176889382956e3910232309ab7056730553e8">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mikepenz-google-material-typeface-2.2.0.1.original_a38d6edeb8d36adfca66f0dac1092e2bd34e884b/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.mikepenz/iconics-core/2.5.11/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="98a135c7935e62ac041acc1fcb148973bde828d5">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mikepenz-iconics-core-2.5.11_ee704ec50644d323dde8800102394cc25c707c04/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.2_6f05c954b9276d96ed9d6a8c4555cbb4afea4162/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/libs/PanoramaGL_0.2-beta.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="0813191ee4a4bb2cfaf3fa402b97079bd861f1b0">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/2/PanoramaGL_0.2-beta_efdfd06d4ca74d374418f843c72209f78bdccece/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/library-2.4.0_9064ab34c0d6d28a268f9d8afb67845ce0f05dbf/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.mikepenz/fontawesome-typeface/4.6.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ac8ac3b58944cfb7f0f3da5852d1730320a165e1">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mikepenz-fontawesome-typeface-4.6.0.1_93d2826ba3073549f780405236eb80293535208c/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.android.support/design/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="fc29308a7a8f6d4407b34634eb48fb8b817f9b23">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.0.0_0607ef4cd259364ebba5708b014246291e07b9cf/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.mikepenz/aboutlibraries/5.6.5/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="5f85a8a551abf8b5c52b1efe1f1e02821c96afa6">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mikepenz-aboutlibraries-5.6.5_ad16ec38fd1b200f97aa0ae2695efc2d30812d23/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.github.Aspsine/FragmentNavigator/1.0.2/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="b8c8727e67d844ddb04c411b0ac72af9030b030a">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.Aspsine-FragmentNavigator-1.0.2_3d673ee560fbf53dca4fb4a5dfe157c102d53342/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.github.florent37/materialviewpager/1.1.3/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="44659983651a49b0b0691e874bde6475bc067648">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.florent37-materialviewpager-1.1.3_8fd7cb3c8d3bf1adc987a2f9ef842919c4214372/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.mikepenz/itemanimators/0.2.4/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="855c5b5e3008983771197f24b4750b0e0adbde55">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mikepenz-itemanimators-0.2.4_880fd26bda0c733ab517ce313ad191075303cee7/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.mikepenz/crossfadedrawerlayout/0.3.4/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="3bd157e2f4f00577787bb38319fee50d7e5e31b8">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mikepenz-crossfadedrawerlayout-0.3.4_4ed0f70b301e49f3c1bc675ccfec43140c14854a/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.borjabravo/readmoretextview/2.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="33e0d8905070bcdf90972b60c59bf853d8dea3bb">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.borjabravo-readmoretextview-2.0.1_4a56eb46eb7ea0b164f264501d4430b82a81b2bf/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/de.hdodenhof/circleimageview/2.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="031e8b3ab2df4ab43b1017f84417d7e10dfbb8d2">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/de.hdodenhof-circleimageview-2.0.0_88bbd6119598001d1f98ab930bb59f8470102d09/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/.gradle/caches/modules-2/files-2.1/com.squareup.haha/haha/2.0.2/fd65b84d12d6adc77ec0e4fcaca623fc391d8679/haha-2.0.2.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="fd65b84d12d6adc77ec0e4fcaca623fc391d8679">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/haha-2.0.2_bbbc71e94de5d0366341e211b4055e80f77e1a87/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.github.panwrona/DownloadProgressBar/1.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="12cf19ced6134b9e457ecfba91e28d49141a50dd">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.panwrona-DownloadProgressBar-1.1_d34f005598c2e5cba5ee7a03bb5fd097f54aff52/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.squareup.leakcanary/leakcanary-android/1.4-beta2/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="9c8472f8e10502af60d0f63ea11eed68bdf690c2">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.squareup.leakcanary-leakcanary-android-1.4-beta2_f9ab217d7f943b711c0dff3220d2508aa0c7d352/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/libs/Msc.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="994d12017bc2c9ba570180cde5500689d134e6e6">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/2/Msc_a3373e8f58d9375db9b0dcbf8d87b9c639b85f06/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c8852ef1ed832da9061378731f2c6344c055fe50">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_4d017ee2cec6276db85eea1737121e150336fcf0/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.malinskiy/superrecyclerview/1.1.4/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="8a9ee7bc61bec4070d7412c7ea45968eef3b7d9b">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.malinskiy-superrecyclerview-1.1.4_4266a83481284f190dc5f65808bb0f71d13ff17e/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.0.0_231cb2dd1412bf4d7fe988d2ca2aeb6a1813e30c/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-analyzer/1.4-beta2/449777cd466ac0a16f7e8d0dc508e70e2cdd13a9/leakcanary-analyzer-1.4-beta2.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="449777cd466ac0a16f7e8d0dc508e70e2cdd13a9">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/leakcanary-analyzer-1.4-beta2_50c206297793f2a7126e06071e64917550082429/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.mikepenz/fastadapter/1.4.4/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ef0ff196faa70b4ed0667f6f78beace9fef1f047">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mikepenz-fastadapter-1.4.4_936b6730a763fa4a9513f6e1e13dbfd48d510822/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.github.rubensousa/FloatingToolbar/1.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c51c14f17925dea233e46f56f99b6370152a69ec">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.rubensousa-FloatingToolbar-1.0.0_a884febbc9958de6bfcfb7eb72f3c35efa3aa113/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.haozhang.libary/android-slanted-textview/1.2/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="20c8a0e3720627e4f7968c3ae477120be4171680">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.haozhang.libary-android-slanted-textview-1.2_61bbaa7c3b8bde2812215f96e57e7646c5273108/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_8f24c6601c1138114603078c1bf60f38963b2c0b/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-watcher/1.4-beta2/6a920fb0d14e5e3b36e37cf33b1eeef2bcce4c92/leakcanary-watcher-1.4-beta2.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="6a920fb0d14e5e3b36e37cf33b1eeef2bcce4c92">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/leakcanary-watcher-1.4-beta2_c4ec78bec6c01ae5bf9b21a1815f202a2771e6fe/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.jpardogo.materialtabstrip/library/1.1.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="611c7708cd3df0d7ae99105d4df5af8eb25c4b32">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.jpardogo.materialtabstrip-library-1.1.0_ffbc3c12daaf609f2d7bfdd78381650af1a73c8b/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.miguelcatalan/materialsearchview/1.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="918e3e9514d90e54421b674cf0c95044f4e155ad">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.miguelcatalan-materialsearchview-1.4.0_86acf7662e2253a17e1208cd283f79132eb1fb0a/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.mikepenz/crossfader/1.3.7/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="397961f0d21f536b145dbdaab56ad1e686159c38">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mikepenz-crossfader-1.3.7_79b341fd7e13b4fed50a4c08f0e8a1ae8a718c05/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="e70f608219ed6b974644c333249ab2bb7b71de98">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.0.0_76aed3e651b98387f5c36730277caca541d17a62/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.daimajia.swipelayout/library/1.2.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="e84b30031d4bab89a2b5c45af4eb9213828524dd">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.daimajia.swipelayout-library-1.2.0_ba1aa04087d265be2891989316e7d58c1bb4fcec/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="894922f67adeaaef51f077a29e315da21a3382d3">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.0.0_8babed10cff26d9289ee9857b525b221f5637ba8/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="3bd97cfefd783e9de1dd1c30574a6adb44b4409b">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.0.0_f8979fccdb55edc8ace443c3f62d7df0d484d544/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/.gradle/caches/modules-2/files-2.1/com.flaviofaria/kenburnsview/1.0.6/65dcd9c03096b73f4740d63cf93d30a692fe52b5/kenburnsview-1.0.6.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="65dcd9c03096b73f4740d63cf93d30a692fe52b5">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/kenburnsview-1.0.6_ea598f1d570ef4b3827b26d8fc92ad4cc65f0a9f/classes.dex" />
+    </item>
+    <item
+        jar="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/exploded-aar/com.github.ksoichiro/android-observablescrollview/1.5.2/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="256c2cf84542c459927ed4aa5f99a9b47855c071">
+        <dex dex="/home/xingyaoma/Program/AndroidStudioProgram/SlookApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.ksoichiro-android-observablescrollview-1.5.2_96dc967b1bea125655192a7bba5ab2f5fb77c9f4/classes.dex" />
+    </item>
+
+</items>

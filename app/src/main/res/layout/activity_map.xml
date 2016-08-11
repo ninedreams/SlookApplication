@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/id_layout_drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- 主界面 -->
+
+    <FrameLayout
+        android:id="@+id/id_layout_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/content_activity_map" />
+    </FrameLayout>
+
+    <!-- 侧滑栏 -->
+    <!-- 侧滑栏的列表视图ID必须是id_listView_drawer 否则MaterialDrawerLayout会报错 -->
+
+
+</RelativeLayout>

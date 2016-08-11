@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dip"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/title_videovr"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_margin="5.0dp"
+            android:textSize="@dimen/title_text_size"
+            android:textStyle="bold"
+            android:textColor="@color/textDark"
+            android:text="北京科技大学" />
+
+        <TextView
+            android:id="@+id/subtitle_videovr"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_margin="5.0dp"
+            android:textColor="@color/textLight"
+            android:textSize="@dimen/caption_text_size"
+            android:text="北京科技大学是一所综合性技术大学" />
+
+
+        <com.google.vr.sdk.widgets.video.VrVideoView
+            android:id="@+id/videovr_view"
+            android:layout_margin="5dip"
+            android:layout_width="match_parent"
+            android:layout_height="250dip"/>
+
+        <!-- Seeking UI & progress indicator.-->
+        <SeekBar
+            android:id="@+id/seek_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_height="32dp"
+            android:layout_width="fill_parent"/>
+
+        <TextView
+            android:id="@+id/status_text_videovr"
+            android:text="Loading Video..."
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:textSize="@dimen/caption_text_size"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="25dp">
+            <TextView
+                android:id="@+id/click_videovr"
+                android:layout_height="25dp"
+                android:layout_width="wrap_content"
+                android:layout_margin="5.0dp"
+                android:textColor="@color/textLight"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/commit_videovr"
+                android:layout_height="25dp"
+                android:layout_width="wrap_content"
+                android:layout_margin="5.0dp"
+                android:textColor="@color/textLight"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/edit_videovr"
+                android:background="@mipmap/ic_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+
+        <com.borjabravo.readmoretextview.ReadMoreTextView
+            android:layout_marginTop="10.0dp"
+            android:id="@+id/moretv_videovr"
+            android:layout_width="wrap_content"
+            android:textSize="14sp"
+            android:layout_height="wrap_content"
+            android:text="@string/ustb_introuce"
+            app:trimCollapsedText="@string/show_all_content"/>
+
+        <TextView
+            android:id="@+id/source_videovr"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textColor="@color/textDark"
+            android:textSize="@dimen/paragragh_text_size"/>
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_videovr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="5dp"
+            android:src="@mipmap/ic_progress"
+            fab:fab_showAnimation="@anim/show_from_bottom"
+            fab:fab_hideAnimation="@anim/hide_to_bottom"/>
+
+    </LinearLayout>
+
+
+</ScrollView>
