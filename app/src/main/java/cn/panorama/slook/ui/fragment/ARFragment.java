@@ -18,7 +18,6 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ScrollView;
 
 import com.amap.api.location.AMapLocation;
@@ -112,7 +111,7 @@ public class ARFragment extends BaseARFragment implements OnClickListener,
     /* 实景层按钮 . */
     private RippleLayout mCameraBtn;
     /* 添加搜索标签 . */
-    private ImageView mAddBtn;
+    //private ImageView mAddBtn;
 
     /* 进度条对话框 . */
     private SweetAlertDialog mProgressDialog;
@@ -246,7 +245,7 @@ public class ARFragment extends BaseARFragment implements OnClickListener,
                 String labelName = mLabelList.get(position).getName().trim();
                 String poiType = PoiTypeMatcher.getPoiType(labelName);
 
-                mProgressDialog.show();
+                //mProgressDialog.show();
                 // 清空之前PoiResult
                 mPoiSearchData.clearPois();
                 // 搜索Poi

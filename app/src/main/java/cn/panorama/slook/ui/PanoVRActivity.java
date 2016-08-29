@@ -155,7 +155,7 @@ public class PanoVRActivity extends Activity {
                     || fileInformation[0] == null || fileInformation[0].first == null) {
                 AssetManager assetManager = getAssets();
                 try {
-                    istr = assetManager.open("ustb_westdoor.jpg");
+                    istr = assetManager.open("beijing1.jpg");
                     panoOptions = new Options();
                     panoOptions.inputType = Options.TYPE_STEREO_OVER_UNDER;
                 } catch (IOException e) {
@@ -164,9 +164,9 @@ public class PanoVRActivity extends Activity {
                 }
             } else {
                 try {
-//                    File file = new File(fileInformation[0].first.getPath());
-//                    istr = new FileInputStream(file);
-                   panoOptions = fileInformation[0].second;
+                    //File file = new File(fileInformation[0].first.getPath());
+                    //istr = new FileInputStream(file);
+                    panoOptions = fileInformation[0].second;
                     AssetManager assetManager = getAssets();
                     switch(panoOptions.inputType){
                         case 0:

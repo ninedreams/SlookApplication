@@ -5,14 +5,14 @@ package cn.panorama.slook.data;
  */
 public class VideoVRData {
     public String url[] = {
-            "http://www.ninedreams.cn/images/img_normal/img_unusual/ustb_univ.jpg",
-            "http://www.ninedreams.cn/images/img_normal/img_unusual/ustb_univ.jpg",
-            "http://www.ninedreams.cn/images/img_normal/img_unusual/ustb_univ.jpg",
-            "http://www.ninedreams.cn/images/img_normal/img_unusual/ustb_univ.jpg",
-            "http://www.ninedreams.cn/images/img_normal/img_unusual/ustb_univ.jpg",
-            "http://www.ninedreams.cn/images/img_normal/img_unusual/ustb_univ.jpg",
-            "http://www.ninedreams.cn/images/img_normal/img_unusual/ustb_univ.jpg",
-            "http://www.ninedreams.cn/images/img_normal/img_unusual/ustb_univ.jpg"
+            "http://2b.zol-img.com.cn/product/90_500x2000/639/ceQ4WvDE7wUfE.jpg",
+            "http://img3.imgtn.bdimg.com/it/u=1262764597,458167148&fm=21&gp=0.jpg",
+            "http://img1.imgtn.bdimg.com/it/u=1204327204,2526446115&fm=21&gp=0.jpg",
+            "http://2b.zol-img.com.cn/product/90_500x2000/639/ceQ4WvDE7wUfE.jpg",
+            "http://2b.zol-img.com.cn/product/90_500x2000/639/ceQ4WvDE7wUfE.jpg",
+            "http://img3.imgtn.bdimg.com/it/u=1262764597,458167148&fm=21&gp=0.jpg",
+            "http://img1.imgtn.bdimg.com/it/u=1204327204,2526446115&fm=21&gp=0.jpg",
+            "http://2b.zol-img.com.cn/product/90_500x2000/639/ceQ4WvDE7wUfE.jpg"
     };
 
     public String title_place[] = {

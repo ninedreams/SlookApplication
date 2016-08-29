@@ -52,7 +52,7 @@
             android:layout_centerInParent="true"
             android:clickable="true"
             android:contentDescription="@null"
-            android:src="@mipmap/ic_toolbar_search" />
+            android:src="@mipmap/ic_toolbar_add" />
 
         <!-- 主页按钮 -->
 
@@ -60,8 +60,8 @@
             android:id="@+id/id_rippleLayout_toolBar_indexBtn"
             android:layout_width="60dp"
             android:layout_height="match_parent"
-            android:layout_marginEnd="60dp"
-            android:layout_marginRight="60dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
             android:layout_toLeftOf="@+id/id_imageView_labelBtn"
             android:layout_toStartOf="@+id/id_imageView_labelBtn"
             android:clickable="true"
@@ -90,8 +90,8 @@
             android:id="@+id/id_rippleLayout_toolBar_cameraBtn"
             android:layout_width="60dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="60dp"
-            android:layout_marginStart="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginStart="40dp"
             android:layout_toEndOf="@+id/id_imageView_labelBtn"
             android:layout_toRightOf="@+id/id_imageView_labelBtn"
             android:clickable="true"

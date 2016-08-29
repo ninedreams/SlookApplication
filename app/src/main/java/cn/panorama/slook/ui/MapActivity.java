@@ -233,7 +233,7 @@ public class MapActivity extends OriginActivity implements OnClickListener,
 		mArcMenu.setOnMenuItemClickListener(new OnMenuItemClickListener() {
 			@Override
 			public void onMenuItemClicked(View v, int pos) {
-				mLabelBtn.setImageResource(R.mipmap.ic_toolbar_search);
+				mLabelBtn.setImageResource(R.mipmap.ic_toolbar_add);
 				if (null == mALocation)
 					return;
 				String labelName = v.getTag() + "";
@@ -545,13 +545,13 @@ public class MapActivity extends OriginActivity implements OnClickListener,
 		switch (v.getId()) {
 		case R.id.id_rippleLayout_toolBar_indexBtn:
 			// 水波纹动画结束后跳转至MainActivity
-			mIndexBtn.showRipple();
+			//mIndexBtn.showRipple();
 			TimerUtil.schedule(mHandler, EVENT_ACTIVITY_START_INDEX,
 					mIndexBtn.getAnimDuration());
 			break;
 
 		case R.id.id_rippleLayout_toolBar_cameraBtn:
-			mCameraBtn.showRipple();
+			//mCameraBtn.showRipple();
 			TimerUtil.schedule(mHandler, EVENT_ACTIVITY_START_AR,
 					mIndexBtn.getAnimDuration());
 			break;

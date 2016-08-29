@@ -10,18 +10,18 @@ public class StaggerViewData {
             "http://img5.imgtn.bdimg.com/it/u=3144862625,2059660588&fm=21&gp=0.jpg",
             "http://img5.imgtn.bdimg.com/it/u=3471917396,1751920999&fm=21&gp=0.jpg",
             "http://img3.imgtn.bdimg.com/it/u=3662506059,2631764980&fm=21&gp=0.jpg",
-            "http://www.ninedreams.cn/images/img_normal/img_unusual/ustb_westdoor.jpg",
-            "http://www.ninedreams.cn/images/img_normal/img_unusual/ustb_library.jpg",
-            "http://www.ninedreams.cn/images/img_normal/img_unusual/ustb_playground.jpg",
-            "http://media-cache-ec0.pinimg.com/736x/9b/98/16/9b9816242b6433c6844bbf70cddbbe1a.jpg",
-            "http://media-cache-ec0.pinimg.com/736x/2d/f0/92/2df0925b13d7bc782512b41d373cd941.jpg",
-            "http://media-cache-ec0.pinimg.com/736x/98/1e/98/981e98dca0a0968b36007ec2ba45d973.jpg",
-            "http://media-cache-ak0.pinimg.com/736x/8f/4e/f3/8f4ef30d53b3137034f539510062cd47.jpg",
-            "http://media-cache-ec0.pinimg.com/736x/3e/16/5f/3e165fce7cb73211be5b5f78a426f0f7.jpg",
-            "http://media-cache-ak0.pinimg.com/736x/90/fb/ab/90fbab0ef514bd47ea9bd81b78e43252.jpg",
-            "http://media-cache-ak0.pinimg.com/736x/d7/39/fa/d739fa2fe6ac409f50738767f83d1192.jpg",
-            "http://media-cache-ec0.pinimg.com/736x/37/28/85/37288502b44b06902708ceb6927cde42.jpg",
-            "http://media-cache-ak0.pinimg.com/736x/dd/d7/81/ddd7813ce56b431083e7ca006a759ad1.jpg"
+            "http://i1.sinaimg.cn/travel/2015/0304/U9460P704DT20150304125045.jpg",
+            "http://s14.sinaimg.cn/mw690/001oBarhzy6Nx3DdvLD6d&690",
+            "http://h.hiphotos.baidu.com/image/h%3D200/sign=d758b7b3760e0cf3bff749fb3a47f23d/2fdda3cc7cd98d1046e31690253fb80e7bec905f.jpg",
+            "http://pic20.nipic.com/20120428/9460604_123456099000_2.jpg",
+            "http://img1.imgtn.bdimg.com/it/u=1572904066,2592491727&fm=206&gp=0.jpg",
+            "http://vimg.mangocity.com/vimg/trip/big_228111_1422857303744.jpg",
+            "http://www.op110.com/_upload/image/923/201478154451568813.jpg",
+            "http://img0.imgtn.bdimg.com/it/u=2289899523,159825189&fm=206&gp=0.jpg",
+            "http://img0.imgtn.bdimg.com/it/u=1051264434,1215526470&fm=206&gp=0.jpg",
+            "http://g.hiphotos.baidu.com/image/h%3D200/sign=898c504eb08f8c54fcd3c22f0a282dee/c2cec3fdfc039245f05577af8394a4c27c1e25a9.jpg",
+            "http://img1.imgtn.bdimg.com/it/u=493747873,2996239398&fm=206&gp=0.jpg",
+            "http://img.80tian.com/blog/201403/20140307134116_8870.jpg"
     };
     public int width[] = {
             468,
@@ -69,7 +69,7 @@ public class StaggerViewData {
     };
 
     public String text[] = {
-            "北京科技大学",
+            "",
             "北京大学",
             "清华大学",
             "北京理工大学",
@@ -77,18 +77,18 @@ public class StaggerViewData {
             "天安门",
             "王府井",
             "颐和园",
-            "slook9",
-            "slook10",
-            "slook11",
-            "slook12",
-            "slook13",
-            "slook14",
-            "slook15",
-            "slook16",
-            "slook17",
-            "slook18",
-            "slook19",
-            "slook20"
+            "九寨沟",
+            "峨眉山",
+            "青城山",
+            "外滩",
+            "泰山",
+            "黄山",
+            "庐山",
+            "衡山",
+            "阆中古城",
+            "桂林",
+            "大理",
+            "西安"
 
     };
 }

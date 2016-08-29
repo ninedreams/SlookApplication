@@ -65,11 +65,4 @@
         android:visibility="invisible"
         android:layout_alignParentStart="true" />
 
-    <ProgressBar
-        android:id="@+id/progressBar_pano"
-        style="?android:progressBarStyleLargeInverse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center" />
-
 </RelativeLayout>

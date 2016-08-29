@@ -33,7 +33,7 @@ public abstract class SensorActivity extends OriginActivity implements
 
 	/* 加速度传感器. */
 	protected Sensor mGravSensor;
-	/* 磁场传感器. */
+	/* 磁场传感器数据. */
 	protected Sensor mMagSensor;
 
 	/* 加速度传感器数据. */

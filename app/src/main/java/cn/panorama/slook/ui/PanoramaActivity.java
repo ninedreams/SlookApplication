@@ -8,7 +8,6 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,7 +15,6 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.OvershootInterpolator;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 import android.widget.ZoomControls;
 
@@ -40,7 +38,6 @@ import com.panoramagl.transitions.PLITransition;
 import com.panoramagl.transitions.PLTransitionBlend;
 import com.panoramagl.utils.PLUtils;
 
-import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -60,12 +57,6 @@ public class PanoramaActivity extends PLView {
     private FloatingActionMenu menuGreen;
     private Handler mUiHandler = new Handler();
 
-
-    private ProgressBar progressBar;
-    private static Handler sHandler = new Handler(Looper.getMainLooper());
-    private WeakRunnable mRunnable = new WeakRunnable(this);
-    private static final int MOCK_LOAD_DATA_DELAYED_TIME = 2000;
-
     private String jsonUrl;//由其他activity点击进入时传递的jsonurl
 
     /**init methods*/
@@ -74,12 +65,6 @@ public class PanoramaActivity extends PLView {
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-
-        //初始化
-        progressBar = (ProgressBar) findViewById(R.id.progressBar_pano);
-
-        //滚动条,加载数据
-        loadData();
 
         //首次进入的加载
         loadPanoramaFromJSON("res://raw/json_cubic_ustb1");
@@ -428,41 +413,5 @@ public class PanoramaActivity extends PLView {
         menuGreen.setIconToggleAnimatorSet(set);
     }
 
-    public void showProgressBar(boolean show) {
-        progressBar.setVisibility(show ? View.VISIBLE : View.GONE);
-    }
-
-    /**
-     * mock load data
-     */
-    private void loadData() {
-        showProgressBar(true);
-        sHandler.postDelayed(mRunnable, MOCK_LOAD_DATA_DELAYED_TIME);
-    }
-
-    @Override
-    protected void onDestroy() {
-        sHandler.removeCallbacks(mRunnable);
-        progressBar = null;
-        super.onDestroy();
-    }
-
-    private static class WeakRunnable implements Runnable {
-
-        WeakReference<PanoramaActivity> mWeakReference;
-
-        public WeakRunnable(PanoramaActivity panoramaActivity) {
-            this.mWeakReference = new WeakReference<PanoramaActivity>(panoramaActivity);
-        }
-
-        @SuppressLint("NewApi")
-        @Override
-        public void run() {
-            PanoramaActivity panoramaActivity = mWeakReference.get();
-            if (panoramaActivity != null && !panoramaActivity.isDestroyed()) {
-                panoramaActivity.showProgressBar(false);
-            }
-        }
-    }
 
 }

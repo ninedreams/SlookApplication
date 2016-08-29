@@ -125,7 +125,7 @@
             android:layout_height="wrap_content"
             android:alpha="0.8"
             android:contentDescription="@null"
-            android:src="@mipmap/ic_ar_search" />
+            android:src="@mipmap/ic_toolbar_add" />
     </cn.panorama.slook.view.ArcMenu>
 
     <ImageView

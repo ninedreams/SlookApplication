@@ -30,7 +30,7 @@
         android:layout_marginLeft="5dp"
         android:layout_marginStart="5dp"
         arcmenu:mainButton_close_img="@mipmap/ic_ar_del"
-        arcmenu:mainButton_open_img="@mipmap/ic_ar_search"
+        arcmenu:mainButton_open_img="@mipmap/ic_toolbar_add"
         arcmenu:position="left_bottom"
         arcmenu:radius="140dp" >
 
