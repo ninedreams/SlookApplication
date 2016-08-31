@@ -15,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.github.clans.fab.FloatingActionButton;
+import com.google.vr.sdk.widgets.video.VrVideoView;
 
 import cn.panorama.slook.adapter.VideoVRAdapter;
 import cn.panorama.slook.ui.R;
@@ -92,16 +93,28 @@ public class VideoVRFragment extends Fragment {
                 Intent intent =null;
                 switch(position){
                     case 0:
+                        fileUri = Uri.parse("http://dl.bgc.mojing.cn/quanjing/160805/1470381389_37_3840HD.mp4");
+                        intent = new Intent(getActivity(), VideoVRActivity.class);
+                        intent.setData(fileUri);
+                        intent.setAction(Intent.ACTION_VIEW);
+                        intent.putExtra("inputType", VrVideoView.Options.TYPE_STEREO_OVER_UNDER);
+                        intent.putExtra("inputFormat", VrVideoView.Options.FORMAT_DEFAULT);
+                        break;
+                    case 1:
+                        fileUri = Uri.parse("http://dl.mojing.cn/xianchang/160620/1466393969_37_3840HD.mp4");
+                        intent = new Intent(getActivity(), VideoVRActivity.class);
+                        intent.setData(fileUri);
+                        intent.setAction(Intent.ACTION_VIEW);
+                        intent.putExtra("inputType", VrVideoView.Options.TYPE_MONO);
+                        intent.putExtra("inputFormat", VrVideoView.Options.FORMAT_DEFAULT);
+                        break;
+                    case 2:
                         fileUri = Uri.parse("http://www.ninedreams.cn/images/videos/congo.mp4");
                         intent = new Intent(getActivity(), VideoVRActivity.class);
                         intent.setData(fileUri);
-                        //intent.setAction(Intent.ACTION_VIEW);
-                        break;
-                    case 1:
-                        intent = new Intent(getActivity(), VideoVRActivity.class);
-                        break;
-                    case 2:
-                        intent = new Intent(getActivity(), VideoVRActivity.class);
+                        intent.setAction(Intent.ACTION_VIEW);
+                        intent.putExtra("inputType", VrVideoView.Options.TYPE_MONO);
+                        intent.putExtra("inputFormat", VrVideoView.Options.FORMAT_DEFAULT);
                         break;
                     case 3:
                         intent = new Intent(getActivity(), VideoVRActivity.class);

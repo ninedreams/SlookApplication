@@ -99,55 +99,55 @@ public class PhotoVRFragment extends Fragment {
                         fileUri = Uri.parse("115.29.144.105/images/output/ustb_westdoor/ustb_westdoor.jpg");
                         intent = new Intent(getActivity(), PanoVRActivity.class);
                         intent.setData(fileUri);
-                        intent.putExtra("inputType", 2);
+                        intent.putExtra("inputType", VrPanoramaView.Options.TYPE_MONO);
                         intent.setAction(Intent.ACTION_VIEW);
                         break;
                     case 1:
                         fileUri = Uri.parse("http://www.ninedreams.cn/images/output/ustb_playground/ustb_playground.jpg");
                         intent = new Intent(getActivity(), PanoVRActivity.class);
                         intent.setData(fileUri);
-                        intent.putExtra("inputType", 2);
+                        intent.putExtra("inputType", VrPanoramaView.Options.TYPE_MONO);
                         intent.setAction(Intent.ACTION_VIEW);
                         break;
                     case 2:
                         fileUri = Uri.parse("http://www.ninedreams.cn/images/output/ustb_library/ustb_library.jpg");
                         intent = new Intent(getActivity(), PanoVRActivity.class);
                         intent.setData(fileUri);
-                        intent.putExtra("inputType", 2);
+                        intent.putExtra("inputType", VrPanoramaView.Options.TYPE_MONO);
                         intent.setAction(Intent.ACTION_VIEW);
                         break;
                     case 3:
                         fileUri = Uri.parse("115.29.144.105/images/output/beijing1/beijing1.jpg");
                         intent = new Intent(getActivity(), PanoVRActivity.class);
                         intent.setData(fileUri);
-                        intent.putExtra("inputType", 2);
+                        intent.putExtra("inputType", VrPanoramaView.Options.TYPE_MONO);
                         intent.setAction(Intent.ACTION_VIEW);
                         break;
                     case 4:
                         fileUri = Uri.parse("115.29.144.105/images/output/ustb_westdoor/ustb_westdoor.jpg");
                         intent = new Intent(getActivity(), PanoVRActivity.class);
                         intent.setData(fileUri);
-                        intent.putExtra("inputType", 2);
+                        intent.putExtra("inputType", VrPanoramaView.Options.TYPE_MONO);
                         intent.setAction(Intent.ACTION_VIEW);
                         break;
                     case 5:
                         fileUri = Uri.parse("http://www.ninedreams.cn/images/output/ustb_playground/ustb_playground.jpg");
                         intent = new Intent(getActivity(), PanoVRActivity.class);
                         intent.setData(fileUri);
-                        intent.putExtra("inputType", 2);
+                        intent.putExtra("inputType", VrPanoramaView.Options.TYPE_MONO);
                         intent.setAction(Intent.ACTION_VIEW);
                         break;
                     case 6:
                         fileUri = Uri.parse("http://www.ninedreams.cn/images/output/ustb_library/ustb_library.jpg");
                         intent = new Intent(getActivity(), PanoVRActivity.class);
                         intent.setData(fileUri);
-                        intent.putExtra("inputType", 2);
+                        intent.putExtra("inputType", VrPanoramaView.Options.TYPE_MONO);
                         intent.setAction(Intent.ACTION_VIEW);
                     case 7:
                         fileUri = Uri.parse("http://www.ninedreams.cn/images/output/beijing1/beijing1.jpg");
                         intent = new Intent(getActivity(), PanoVRActivity.class);
                         intent.setData(fileUri);
-                        intent.putExtra("inputType", 2);
+                        intent.putExtra("inputType", VrPanoramaView.Options.TYPE_MONO);
                         intent.setAction(Intent.ACTION_VIEW);
                         break;
                     case 8:

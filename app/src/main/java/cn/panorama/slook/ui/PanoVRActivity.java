@@ -164,8 +164,8 @@ public class PanoVRActivity extends Activity {
                 }
             } else {
                 try {
-                    //File file = new File(fileInformation[0].first.getPath());
-                    //istr = new FileInputStream(file);
+//                    File file = new File(fileInformation[0].first.getPath());
+//                    istr = new FileInputStream(file);
                     panoOptions = fileInformation[0].second;
                     AssetManager assetManager = getAssets();
                     switch(panoOptions.inputType){

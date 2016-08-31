@@ -5,24 +5,45 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
-import android.view.View;
+import android.util.Pair;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.github.clans.fab.FloatingActionButton;
 import com.google.vr.sdk.widgets.video.VrVideoEventListener;
 import com.google.vr.sdk.widgets.video.VrVideoView;
+import com.google.vr.sdk.widgets.video.VrVideoView.Options;
 
 import java.io.IOException;
-import java.util.LinkedList;
 
+/**
+ * A test activity that renders a 360 video using {@link VrVideoView}.
+ * It loads the video in the assets by default. User can use it to load any video files using the
+ * command:
+ *   adb shell am start -a android.intent.action.VIEW \
+ *     -n com.google.vr.sdk.samples.simplevideowidget/.SimpleVrVideoActivity \
+ *     -d /sdcard/FILENAME.MP4
+ *
+ * To load HLS urls add "--ei inputFormat 2" to pass in an integer extra which will set
+ * VrVideoView.Options.inputFormat. e.g.
+ *   adb shell am start -a android.intent.action.VIEW \
+ *     -n com.google.vr.sdk.samples.simplevideowidget/.SimpleVrVideoActivity \
+ *     -d "https://EXAMPLE.COM/FILENAME.M3U8" \
+ *     --ei inputFormat 2
+ *
+ * To specify that the video is of type stereo over under (has images for left and right eyes),
+ * add "--ei inputType 2" to pass in an integer extra which will set VrVideoView.Options.inputType.
+ * This can be combined with other extras.
+ * e.g.
+ *   adb shell am start -a android.intent.action.VIEW \
+ *     -n com.google.vr.sdk.samples.simplevideowidget/.SimpleVrVideoActivity \
+ *     -d "https://EXAMPLE.COM/FILENAME.MP4" \
+ *     --ei inputType 2
+ */
 public class VideoVRActivity extends Activity {
-
     private static final String TAG = VideoVRActivity.class.getSimpleName();
 
     /**
@@ -54,12 +75,16 @@ public class VideoVRActivity extends Activity {
 
     /** Tracks the file to be loaded across the lifetime of this app. **/
     private Uri fileUri;
+
+    /** Configuration information for the video. **/
+    private Options videoOptions = new Options();
+
     private VideoLoaderTask backgroundVideoLoaderTask;
 
     /**
      * The video view and its custom UI elements.
      */
-    private VrVideoView videoWidgetView;
+    protected VrVideoView videoWidgetView;
 
     /**
      * Seeking UI & progress indicator. The seekBar's progress value represents milliseconds in the
@@ -74,14 +99,8 @@ public class VideoVRActivity extends Activity {
      */
     private boolean isPaused = false;
 
-    private FloatingActionButton fab;
-    private int mMaxProgress = 100;
-    private LinkedList<ProgressType> mProgressTypes;
-    private Handler mUiHandler = new Handler();
-
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_vr);
 
@@ -102,58 +121,7 @@ public class VideoVRActivity extends Activity {
 
         // Initial launch of the app or an Activity recreation due to rotation.
         handleIntent(getIntent());
-
-        //exe fab
-        initFab();
-
     }
-
-    private void initFab() {
-
-        fab = (FloatingActionButton) findViewById(R.id.fab_videovr);
-        mProgressTypes = new LinkedList<>();
-        for (ProgressType type : ProgressType.values()) {
-            mProgressTypes.offer(type);
-        }
-
-        fab.setMax(mMaxProgress);
-
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ProgressType type = mProgressTypes.poll();
-                switch (type) {
-                    case INDETERMINATE:
-                        fab.setShowProgressBackground(true);
-                        fab.setIndeterminate(true);
-                        mProgressTypes.offer(ProgressType.INDETERMINATE);
-                        break;
-                    case PROGRESS_POSITIVE:
-                        fab.setIndeterminate(false);
-                        fab.setProgress(70, true);
-                        mProgressTypes.offer(ProgressType.PROGRESS_POSITIVE);
-                        break;
-                    case PROGRESS_NEGATIVE:
-                        fab.setProgress(30, true);
-                        mProgressTypes.offer(ProgressType.PROGRESS_NEGATIVE);
-                        break;
-                    case HIDDEN:
-                        fab.hideProgress();
-                        mProgressTypes.offer(ProgressType.HIDDEN);
-                        break;
-                    case PROGRESS_NO_ANIMATION:
-                        increaseProgress(fab, 0);
-                        break;
-                    case PROGRESS_NO_BACKGROUND:
-                        fab.setShowProgressBackground(false);
-                        fab.setIndeterminate(true);
-                        mProgressTypes.offer(ProgressType.PROGRESS_NO_BACKGROUND);
-                        break;
-                }
-            }
-        });
-    }
-
 
     /**
      * Called when the Activity is already running and it's given a new intent.
@@ -183,6 +151,9 @@ public class VideoVRActivity extends Activity {
             } else {
                 Log.i(TAG, "Using file " + fileUri.toString());
             }
+
+            videoOptions.inputFormat = intent.getIntExtra("inputFormat", Options.FORMAT_DEFAULT);
+            videoOptions.inputType = intent.getIntExtra("inputType", Options.TYPE_MONO);
         } else {
             Log.i(TAG, "Intent is not ACTION_VIEW. Using the default video.");
             fileUri = null;
@@ -195,7 +166,7 @@ public class VideoVRActivity extends Activity {
             backgroundVideoLoaderTask.cancel(true);
         }
         backgroundVideoLoaderTask = new VideoLoaderTask();
-        backgroundVideoLoaderTask.execute(fileUri);
+        backgroundVideoLoaderTask.execute(Pair.create(fileUri, videoOptions));
     }
 
     @Override
@@ -289,7 +260,7 @@ public class VideoVRActivity extends Activity {
     /**
      * Listen to the important events from widget.
      */
-    private class ActivityEventListener extends VrVideoEventListener {
+    private class ActivityEventListener extends VrVideoEventListener  {
         /**
          * Called by video widget on the UI thread when it's done loading the video.
          */
@@ -341,14 +312,20 @@ public class VideoVRActivity extends Activity {
     /**
      * Helper class to manage threading.
      */
-    class VideoLoaderTask extends AsyncTask<Uri, Void, Boolean> {
+    class VideoLoaderTask extends AsyncTask<Pair<Uri, Options>, Void, Boolean> {
         @Override
-        protected Boolean doInBackground(Uri... uri) {
+        protected Boolean doInBackground(Pair<Uri, Options>... fileInformation) {
             try {
-                if (uri == null || uri.length < 1 || uri[0] == null) {
-                    videoWidgetView.loadVideoFromAsset("congo.mp4");
+                if (fileInformation == null || fileInformation.length < 1
+                        || fileInformation[0] == null || fileInformation[0].first == null) {
+                    // No intent was specified, so we default to playing the local stereo-over-under video.
+                    Log.d(TAG, "网络加载不成功，使用自带默认资源！");
+                    Options options = new Options();
+                    options.inputType = Options.TYPE_STEREO_OVER_UNDER;
+                    videoWidgetView.loadVideoFromAsset("congo.mp4", options);
                 } else {
-                    videoWidgetView.loadVideo(uri[0]);
+                    Log.d(TAG, "doInBackground: 网络加载成功。。。。。。。。。。。。。。。。。。。。");
+                    videoWidgetView.loadVideo(fileInformation[0].first, fileInformation[0].second);
                 }
             } catch (IOException e) {
                 // An error here is normally due to being unable to locate the file.
@@ -367,30 +344,5 @@ public class VideoVRActivity extends Activity {
 
             return true;
         }
-    }
-
-    private void increaseProgress(final FloatingActionButton fab, int i) {
-        if (i <= mMaxProgress) {
-            fab.setProgress(i, false);
-            final int progress = ++i;
-            mUiHandler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    increaseProgress(fab, progress);
-                }
-            }, 30);
-        } else {
-            mUiHandler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    fab.hideProgress();
-                }
-            }, 200);
-            mProgressTypes.offer(ProgressType.PROGRESS_NO_ANIMATION);
-        }
-    }
-
-    private enum ProgressType {
-        INDETERMINATE, PROGRESS_POSITIVE, PROGRESS_NEGATIVE, HIDDEN, PROGRESS_NO_ANIMATION, PROGRESS_NO_BACKGROUND
     }
 }
