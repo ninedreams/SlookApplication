@@ -1,2 +1,2 @@
-configurations.maybeCreate("default")
+configurations.create("default")
 artifacts.add("default", file('commonwidget.aar'))
